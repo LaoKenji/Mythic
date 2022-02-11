@@ -5,36 +5,26 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ConnexionUserComponent } from './connexion-user/connexion-user.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ProfilPartComponent } from './profil-part/profil-part.component';
-import { ProfilProComponent } from './profil-pro/profil-pro.component';
-import { PanierComponent } from './panier/panier.component';
-import { PageProduitComponent } from './page-produit/page-produit.component';
-import { PageListeProduitComponent } from './page-liste-produit/page-liste-produit.component';
-import { BlocRechercheComponent } from './bloc-recherche/bloc-recherche.component';
-import { NavBarConnectComponent } from './nav-bar-connect/nav-bar-connect.component';
-
-
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     ConnexionUserComponent,
-    ProfilPartComponent,
-    ProfilProComponent,
-    PanierComponent,
-    PageProduitComponent,
-    PageListeProduitComponent,
-    BlocRechercheComponent,
-    NavBarConnectComponent
+    InscriptionUserComponent
   ],
   imports: [
     BrowserModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    RouterModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-
- }
+export class AppModule { }
