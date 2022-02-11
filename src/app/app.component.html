@@ -1,36 +1,24 @@
 <!-- Page d'accueil -->
-
+<!-- Nav barre -->
 <app-nav-bar></app-nav-bar>
 
 <!-- Zone recherche objets --> 
-<div class="navrecherche">
-    <div class="categorie">
-        <button><img src="../../assets/ressources/Group 4.png"></button>
-        <input type='text' id ='categories' placeholder="Categories" class="inputcate">
-    </div>
-    <br>
-    <div class="recher">
-        <div>
-            <img src="../../assets/ressources/Group 34.png">
-            <input type='text' id ='recher' placeholder="Mots Clé">
-        </div>
-    </div>
-    <br>
-    <div class="loca">
-        <div>
-            <img src="../../assets/ressources/Group 7.png">
-            <input type='text' id ='localisations' placeholder="Localisations">
-        </div>
-        
-    </div>
-</div>
-<div class="divrecherche">
-    <div>
-        <p>Recherches</p>
-    </div>
-</div>
-<br><br><br><br><br>
-
+<app-bloc-recherche></app-bloc-recherche>
 <!-- Catégories --> 
 <h3>Catégories les plus visitées</h3>
-<!--  -->
+
+<!--Bouton pour switch page-->
+<a href="page-liste-produit/page-liste-produit.component.html">
+    <button>Click Me</button>
+  </a>
+<button routerLink="page-liste-produit/page-liste-produit.component.html" class="btn">Page liste produit</button>
+<button onclick="window.location.href='page-produit/page-produit.component.html'">Page produit</button>
+<button onclick="window.location.href='profil-part/profil-part.component.html'">Page profil particulier</button>
+<button onclick="window.location.href='profil-pro/profil-pro.component.html'">Page profil pro</button>
+<button onclick="window.location.href='panier/panier.component.html'">Page panier</button>
+
+<br><br>
+<app-page-liste-produit></app-page-liste-produit>
+<br><br>
+
+<app-page-produit></app-page-produit>

@@ -1,0 +1,62 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+nav{
+    margin : auto;
+    border: 1px solid black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    align-items: center;
+}
+
+li{
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.ajouter_offre{
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+.recherche{
+    margin-left: 200px;
+}
+
+.conn_ins{
+    float: right;
+    align-items: center;
+    margin-top:-80px;
+    background-color: transparent;
+    display: flex;
+}
+
+.connexion{
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+.inscription{
+    background-color: orange;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
