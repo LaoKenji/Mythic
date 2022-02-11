@@ -9,13 +9,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
+import { BlocRechercheComponent } from './bloc-recherche/bloc-recherche.component';
+import { PageListeProduitComponent } from './page-liste-produit/page-liste-produit.component';
+import { PageProduitComponent } from './page-produit/page-produit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     ConnexionUserComponent,
-    InscriptionUserComponent
+    InscriptionUserComponent,
+    BlocRechercheComponent,
+    PageListeProduitComponent,
+    PageProduitComponent
   ],
   imports: [
     BrowserModule,
