@@ -3,10 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ConnexionUserComponent } from '../app/connexion-user/connexion-user.component'
 import { RouterModule, Routes } from '@angular/router';
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
+import { PageListeProduitComponent } from './page-liste-produit/page-liste-produit.component';
 
 const routes: Routes = [
   {path: "connexion" , component: ConnexionUserComponent },
-  {path: "inscription" , component: InscriptionUserComponent }
+  {path: "inscription" , component: InscriptionUserComponent },
+  {path: "pagelisteproduit", component: PageListeProduitComponent}
+
 
 ];
 
