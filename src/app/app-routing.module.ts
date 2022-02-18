@@ -12,8 +12,12 @@ import { ProfilPartComponent } from './profil-part/profil-part.component';
 import { ProfilProComponent } from './profil-pro/profil-pro.component';*/
 
 
+import { AccueilComponent } from './accueil/accueil.component';
+import { AjoutOffreComponent } from './ajout-offre/ajout-offre.component';
 
 const routes: Routes = [
+  {path: "" , component: AccueilComponent },
+  {path: "ajout_offre" , component: AjoutOffreComponent },
   {path: "connexion" , component: ConnexionUserComponent },
   {path: "inscription" , component: InscriptionUserComponent },
   {path: "pagelisteproduit", component: PageListeProduitComponent},
@@ -21,6 +25,7 @@ const routes: Routes = [
   {path: "panier", component: PanierComponent},
   {path: "profil-part", component: ProfilPartComponent},
   {path: "profil-pro", component: ProfilProComponent}*/
+  {path: '**', redirectTo: '' }
 
 
 ];
