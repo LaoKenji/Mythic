@@ -12,6 +12,8 @@ import { InscriptionUserComponent } from './inscription-user/inscription-user.co
 import { BlocRechercheComponent } from './bloc-recherche/bloc-recherche.component';
 import { PageListeProduitComponent } from './page-liste-produit/page-liste-produit.component';
 import { PageProduitComponent } from './page-produit/page-produit.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { AjoutOffreComponent } from './ajout-offre/ajout-offre.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PageProduitComponent } from './page-produit/page-produit.component';
     InscriptionUserComponent,
     BlocRechercheComponent,
     PageListeProduitComponent,
-    PageProduitComponent
+    PageProduitComponent,
+    AccueilComponent,
+    AjoutOffreComponent
   ],
   imports: [
     BrowserModule,

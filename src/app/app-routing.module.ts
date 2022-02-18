@@ -4,12 +4,16 @@ import { ConnexionUserComponent } from '../app/connexion-user/connexion-user.com
 import { RouterModule, Routes } from '@angular/router';
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
 import { PageListeProduitComponent } from './page-liste-produit/page-liste-produit.component';
+import { AccueilComponent } from './accueil/accueil.component';
+import { AjoutOffreComponent } from './ajout-offre/ajout-offre.component';
 
 const routes: Routes = [
+  {path: "" , component: AccueilComponent },
+  {path: "ajout_offre" , component: AjoutOffreComponent },
   {path: "connexion" , component: ConnexionUserComponent },
   {path: "inscription" , component: InscriptionUserComponent },
   {path: "pagelisteproduit", component: PageListeProduitComponent},
-  { path: '**', redirectTo: '' }
+  {path: '**', redirectTo: '' }
 
 
 ];
