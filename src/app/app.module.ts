@@ -8,8 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
-
-
+import { MatChipsModule} from '@angular/material/chips'
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
 import { BlocRechercheComponent } from './bloc-recherche/bloc-recherche.component';
@@ -33,7 +33,9 @@ import { PageProduitComponent } from './page-produit/page-produit.component';
     RouterModule,
     HttpClientModule,
     AppRoutingModule,
-    MatMenuModule
+    MatMenuModule,
+    MatChipsModule,
+    DragDropModule
 
   ],
   providers: [],
@@ -43,6 +45,4 @@ import { PageProduitComponent } from './page-produit/page-produit.component';
 
 
 export class AppModule { }
-
-export class MenuOverviewExample {}
 
