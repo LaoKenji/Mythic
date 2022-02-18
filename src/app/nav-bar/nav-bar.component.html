@@ -18,7 +18,7 @@
         </ul>
         <ul class="conn_ins">
             <li>
-                <button (click)="goToPage('connexion')">Connexion</button>
+                <a [routerLink]="['connexion']" class="nav-link" ><button>Connexion</button></a>
             </li>
             <li>
                 <button (click)="goToPage('inscription')" class="btn_inscription"><img src ="../../assets/ressources/Group 31.png">Inscription</button>

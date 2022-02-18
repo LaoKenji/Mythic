@@ -8,7 +8,8 @@ import { PageListeProduitComponent } from './page-liste-produit/page-liste-produ
 const routes: Routes = [
   {path: "connexion" , component: ConnexionUserComponent },
   {path: "inscription" , component: InscriptionUserComponent },
-  {path: "pagelisteproduit", component: PageListeProduitComponent}
+  {path: "pagelisteproduit", component: PageListeProduitComponent},
+  { path: '**', redirectTo: '' }
 
 
 ];
