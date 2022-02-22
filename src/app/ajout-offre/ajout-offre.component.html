@@ -1,1 +1,51 @@
-<p>ajout-offre works!</p>
+<br><br><br><br><br>
+
+<form>
+        
+    <h1>Ajout d'Offre</h1>
+
+    
+    <div class="inputs">
+        <input class="ajout_img" placeholder="Déposer votre Image" />
+
+        <label>Sélectionner la Catégorie de l'objet</label>
+        <mat-chip-list
+        class="example-chip"
+        cdkDropList 
+        cdkDropListOrientation="horizontal"
+        >
+        <mat-chip
+        class="example-box"
+        cdkDrag
+        *ngFor="let categorie of categorie">
+        {{categorie.name}}
+        </mat-chip>
+    </mat-chip-list>
+
+    <br>
+        <label>Sélectionner l'Epoque de l'objet</label>
+        <mat-chip-list
+        class="example-chip"
+        cdkDropList 
+        cdkDropListOrientation="horizontal"
+        >
+        <mat-chip
+        class="example-box"
+        cdkDrag
+        *ngFor="let epoque of epoque">
+        {{epoque.name}}
+        </mat-chip>
+    </mat-chip-list>
+
+    <br>
+
+
+
+        <input class="description" placeholder="Description">
+        <input class="prix" placeholder="Prix">
+    </div>
+    
+    <div align="center">
+    <button type="submit">Ajouter Offre</button>
+    </div>
+</form>

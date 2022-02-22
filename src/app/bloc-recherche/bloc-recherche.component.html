@@ -1,17 +1,16 @@
+<br><br><br>
+<div class="blocrecherche">
 
-<div class="navrecherche">
-
-    
-    <div class="categorie">
-
-        <button mat-button [matMenuTriggerFor]="menu">Catégories</button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>Armes</button>
-          <button mat-menu-item>Vaisselles</button>
-          <button mat-menu-item>Meubles</button>
-          <button mat-menu-item>Divers</button>
-        </mat-menu>
-    </div>
+    <button mat-button [matMenuTriggerFor]="menu" class="menu">Catégories
+        <div class="categorie">
+            <mat-menu #menu="matMenu">
+            <button mat-menu-item>Armes</button>
+            <button mat-menu-item>Vaisselles</button>
+            <button mat-menu-item>Meubles</button>
+            <button mat-menu-item>Divers</button>
+            </mat-menu>
+        </div>
+    </button>
     <br>
     <div class="recher">
         <div>
@@ -29,8 +28,11 @@
     </div>
 </div>
 <div class="divrecherche">
-    <div>
-        <p>Recherches</p>
-    </div>
+    <a routerLink="/pagelisteproduit">
+        <div>
+            <img src="../../assets/ressources/Group 49.png">
+            <p>Recherche</p>
+        </div>
+    </a>
 </div>
 <br><br><br><br><br>

@@ -9,7 +9,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule} from '@angular/material/chips'
-import {DragDropModule} from '@angular/cdk/drag-drop';
+
+
 
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
 import { BlocRechercheComponent } from './bloc-recherche/bloc-recherche.component';
@@ -17,6 +18,7 @@ import { PageListeProduitComponent } from './page-liste-produit/page-liste-produ
 import { PageProduitComponent } from './page-produit/page-produit.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AjoutOffreComponent } from './ajout-offre/ajout-offre.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { AjoutOffreComponent } from './ajout-offre/ajout-offre.component';
     PageListeProduitComponent,
     PageProduitComponent,
     AccueilComponent,
-    AjoutOffreComponent
+    AjoutOffreComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,6 @@ import { AjoutOffreComponent } from './ajout-offre/ajout-offre.component';
     AppRoutingModule,
     MatMenuModule,
     MatChipsModule,
-    DragDropModule
 
   ],
   providers: [],

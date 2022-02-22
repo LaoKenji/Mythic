@@ -15,25 +15,36 @@ export class PageListeProduitComponent implements OnInit {
 
 
   categorie: Categorie[] = [
-    {name: 'apple'},
-    {name: 'banana'},
-    {name: 'strawberry'},
-    {name: 'orange'},
-    {name: 'kiwi'},
-    {name: 'cherry'},
+    {name: 'Armes'},
+    {name: 'Vaisselles'},
+    {name: 'Meubles'},
+    {name: 'Armures'},
+    {name: 'Décoration'},
+    {name: 'Peinture'},
+    {name: 'Sculpture'},
+    {name: 'Divers'},
+  ];
+  epoque: Epoque[] = [
+    {name: 'Antiquité'},
+    {name: 'Moyen-Age'},
+    {name: 'Rennaissance'},
+    {name: 'Epoque Moderne'},
   ];
 
-  drop(event: CdkDragDrop<Categorie[]>) {
+  drop(event: CdkDragDrop<Categorie[], Epoque[] >) {
     moveItemInArray(this.categorie, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.epoque, event.previousIndex, event.currentIndex);
  }
 
-
-
 }
-
 export interface Categorie {
   name: string;
 }
+
+export interface Epoque {
+  name: string;
+}
+
 
 
 
