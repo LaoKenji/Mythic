@@ -42,7 +42,7 @@ li{
 .conn_ins{
     float: right;
     align-items: center;
-    margin-top:-80px;
+    margin-top:-6%;
     background-color: transparent;
     display: flex;
 }
@@ -76,7 +76,9 @@ li{
     background-color: white;
     align-items: center;
 }
-
+h1{
+    margin-top:15%;
+}
 /* unvisited link */
 a:link {
     color: black
