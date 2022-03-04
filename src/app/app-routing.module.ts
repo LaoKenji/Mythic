@@ -15,16 +15,20 @@ import { ProfilProComponent } from './profil-pro/profil-pro.component';*/
 import { PageListeProduitComponent } from './page-liste-produit/page-liste-produit.component';
 import { PageProduitComponent } from './page-produit/page-produit.component';
 import { FooterComponent } from './footer/footer.component';
+import { SeparationInscriptionUserComponent } from './separation-inscription-user/separation-inscription-user.component';
+import { InscriptionProComponent } from './inscription-pro/inscription-pro.component';
 
 const routes: Routes = [
   {path: "" , component: AccueilComponent },
   {path: "ajout_offre" , component: AjoutOffreComponent },
   {path: "connexion" , component: ConnexionUserComponent },
-  {path: "inscription" , component: InscriptionUserComponent },
+  {path: "inscription" , component: SeparationInscriptionUserComponent },
   {path: "pagelisteproduit", component: PageListeProduitComponent},
   {path: "page-produit", component: PageProduitComponent},
   {path: "panier", component: PanierComponent},
   {path: "footer", component: FooterComponent},
+  {path: "inscription-part", component: InscriptionUserComponent},
+  {path: "inscription-pro", component: InscriptionProComponent},
   /*{path: "profil-part", component: ProfilPartComponent},
   {path: "profil-pro", component: ProfilProComponent}*/
   {path: '**', redirectTo: '' }

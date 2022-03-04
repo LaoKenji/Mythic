@@ -19,6 +19,8 @@ import { PageProduitComponent } from './page-produit/page-produit.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AjoutOffreComponent } from './ajout-offre/ajout-offre.component';
 import { FooterComponent } from './footer/footer.component';
+import { SeparationInscriptionUserComponent } from './separation-inscription-user/separation-inscription-user.component';
+import { InscriptionProComponent } from './inscription-pro/inscription-pro.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { FooterComponent } from './footer/footer.component';
     PageProduitComponent,
     AccueilComponent,
     AjoutOffreComponent,
-    FooterComponent
+    FooterComponent,
+    SeparationInscriptionUserComponent,
+    InscriptionProComponent
   ],
   imports: [
     BrowserModule,
