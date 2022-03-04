@@ -1,0 +1,31 @@
+<br><br><br><br><br><br>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="inscription-pro.component.scss">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    </head>
+
+    <form>
+        
+        <h1>Inscription</h1>
+        <div class="social-media">
+        <p><i class="fab fa-google"></i></p>
+        <p><i class="fab fa-instagram"></i></p>
+        <p><i class="fab fa-facebook-f"></i></p>
+        <p><i class="fab fa-twitter"></i></p>
+        </div>
+        <p class="choose-email">ou utiliser mon adresse e-mail :</p>
+        
+        <div class="inputs">
+        <input type="email" placeholder="Email" />
+        <input type="email" placeholder="Confirmer Adresse Mail" />
+        <input type="password" placeholder="Mot de passe">
+        <input type="password" placeholder="Confirmer Mot de passe">
+        </div>
+        
+        <p class="inscription">J'ai un compte. Je me <a (click)="goToPage('connexion')"><span>connecte</span></a> à mon compte.</p>
+        <div align="center">
+        <button type="submit">S'Inscrire</button>
+        </div>
+    </form>
