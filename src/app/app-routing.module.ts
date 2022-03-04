@@ -19,11 +19,12 @@ import { SeparationInscriptionUserComponent } from './separation-inscription-use
 import { InscriptionProComponent } from './inscription-pro/inscription-pro.component';
 
 const routes: Routes = [
-  {path: "" , component: AccueilComponent },
+  {path: "accueil" , component: AccueilComponent },
   {path: "ajout_offre" , component: AjoutOffreComponent },
   {path: "connexion" , component: ConnexionUserComponent },
   {path: "inscription" , component: SeparationInscriptionUserComponent },
   {path: "pagelisteproduit", component: PageListeProduitComponent},
+  {path: "connexion/pagelisteproduit", component: PageListeProduitComponent},
   {path: "page-produit", component: PageProduitComponent},
   {path: "panier", component: PanierComponent},
   {path: "footer", component: FooterComponent},
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path: "inscription-pro", component: InscriptionProComponent},
   /*{path: "profil-part", component: ProfilPartComponent},
   {path: "profil-pro", component: ProfilProComponent}*/
-  {path: '**', redirectTo: '' }
+  {path: '**', redirectTo: 'accueil' }
 
 
 ];

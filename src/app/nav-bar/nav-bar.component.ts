@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-
   constructor(public router : Router) { }
 
   goToPage(pageName : string):void {
@@ -16,5 +15,4 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
