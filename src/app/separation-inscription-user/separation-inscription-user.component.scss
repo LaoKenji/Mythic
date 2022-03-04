@@ -11,6 +11,7 @@ button{
     background-color: #FFAC4B;
     outline:none;
     cursor:pointer;
+    
 }
 
 ul {
@@ -21,6 +22,8 @@ ul {
     overflow: hidden;
     background-color: white;
     align-items: center;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 li{
@@ -29,4 +32,5 @@ li{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    margin: 0 auto;
 }

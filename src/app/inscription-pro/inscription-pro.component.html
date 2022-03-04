@@ -8,7 +8,7 @@
 
     <form>
         
-        <h1>Inscription</h1>
+        <h1>Inscription Professionel</h1>
         <div class="social-media">
         <p><i class="fab fa-google"></i></p>
         <p><i class="fab fa-instagram"></i></p>
@@ -20,8 +20,11 @@
         <div class="inputs">
         <input type="email" placeholder="Email" />
         <input type="email" placeholder="Confirmer Adresse Mail" />
-        <input type="password" placeholder="Mot de passe">
-        <input type="password" placeholder="Confirmer Mot de passe">
+        <input type="text" id="name" name="name" required minlength="3" maxlength="20" placeholder="Nom de l'entreprise (entre 3 et 20 charactères)">
+        <input type="number" placeholder="Numéro de Siret" required maxlength="14"/>
+        <input type="number" placeholder="Code APE" required maxlength="5"/>
+        <input type="password" placeholder="Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25">
+        <input type="password" placeholder="Confirmer Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25">
         </div>
         
         <p class="inscription">J'ai un compte. Je me <a (click)="goToPage('connexion')"><span>connecte</span></a> à mon compte.</p>
