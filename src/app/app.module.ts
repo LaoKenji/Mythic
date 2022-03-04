@@ -11,7 +11,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule} from '@angular/material/chips';
 
 
-
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
 import { BlocRechercheComponent } from './bloc-recherche/bloc-recherche.component';
 import { PageListeProduitComponent } from './page-liste-produit/page-liste-produit.component';
