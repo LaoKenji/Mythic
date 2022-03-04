@@ -12,7 +12,6 @@ export class NavBarComponent implements OnInit {
 
   goToPage(pageName : string):void {
     this.router.navigate([`${pageName}`])
-    console.log("ALLER LA")
   }
 
   ngOnInit(): void {
