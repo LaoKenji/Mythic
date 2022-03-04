@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatChipsModule} from '@angular/material/chips'
+import { MatChipsModule} from '@angular/material/chips';
 
 
 
@@ -43,7 +43,9 @@ import { FooterComponent } from './footer/footer.component';
     MatMenuModule,
     MatChipsModule,
 
+
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
