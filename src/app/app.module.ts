@@ -20,12 +20,14 @@ import { AjoutOffreComponent } from './ajout-offre/ajout-offre.component';
 import { FooterComponent } from './footer/footer.component';
 import { SeparationInscriptionUserComponent } from './separation-inscription-user/separation-inscription-user.component';
 import { InscriptionProComponent } from './inscription-pro/inscription-pro.component';
+import { NavBarConnectComponent } from './nav-bar-connect/nav-bar-connect.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
+    NavBarConnectComponent,
     ConnexionUserComponent,
     InscriptionUserComponent,
     BlocRechercheComponent,
