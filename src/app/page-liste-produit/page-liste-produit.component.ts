@@ -9,7 +9,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 })
 export class PageListeProduitComponent implements OnInit {
   
-  isSelected = true;
+  isSelected = false;
   path = "";
   public produit = {  
     id: "" as any,   
@@ -64,14 +64,18 @@ export class PageListeProduitComponent implements OnInit {
     moveItemInArray(this.categorie, event.previousIndex, event.currentIndex);
     moveItemInArray(this.epoque, event.previousIndex, event.currentIndex);
  }
-
-  click(id_articl : string) {
-      this.http.get('http://localhost/article.selection.php?id='+id_articl).subscribe(data => {
-      this.data.push(data);
-      console.log(this.data);
-    }, error => console.error(error));
-    this.router.navigate(["page-produit/"+id_articl]);
+ selected() {
+   if (this.isSelected = false) {
+     this.isSelected = true;
+   }
  }
+
+ notSelected () {
+  if (this.isSelected = true) {
+    this.isSelected = false;
+  }
+ }
+
 
 }
 export interface Categorie {
