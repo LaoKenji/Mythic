@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule} from '@angular/material/chips';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {  MatTableModule } from '@angular/material/table';
 
 
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
@@ -47,6 +49,8 @@ import { NavBarConnectComponent } from './nav-bar-connect/nav-bar-connect.compon
     AppRoutingModule,
     MatMenuModule,
     MatChipsModule,
+    MatPaginatorModule,
+    MatTableModule
 
 
   ],

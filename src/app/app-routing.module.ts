@@ -24,8 +24,8 @@ const routes: Routes = [
   {path: "connexion" , component: ConnexionUserComponent },
   {path: "inscription" , component: SeparationInscriptionUserComponent },
   {path: "pagelisteproduit", component: PageListeProduitComponent},
-  {path: "connexion/pagelisteproduit", component: PageListeProduitComponent},
-  {path: "page-produit", component: PageProduitComponent},
+  {path: "pagelisteproduit/:id/:libelle_article/:etat/:prix", component: PageListeProduitComponent},
+  {path: "page-produit/:id_article", component: PageProduitComponent},
   {path: "panier", component: PanierComponent},
   {path: "footer", component: FooterComponent},
   {path: "inscription-part", component: InscriptionUserComponent},
@@ -33,8 +33,6 @@ const routes: Routes = [
   /*{path: "profil-part", component: ProfilPartComponent},
   {path: "profil-pro", component: ProfilProComponent}*/
   {path: '**', redirectTo: 'accueil' }
-
-
 ];
 
 @NgModule({
