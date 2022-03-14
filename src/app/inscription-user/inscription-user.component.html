@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     </head>
 
-    <form>
+    <form (ngSubmit)="SaveData(registerFrom)" #registerFrom="ngForm">
         
-        <h1>Inscription</h1>
+        <h1>Inscription Particulier</h1>
         <div class="social-media">
         <p><i class="fab fa-google"></i></p>
         <p><i class="fab fa-instagram"></i></p>
@@ -18,15 +18,21 @@
         <p class="choose-email">ou utiliser mon adresse e-mail :</p>
         
         <div class="inputs">
-            <input type="email" placeholder="Email" />
-            <input type="email" placeholder="Confirmer Adresse Mail" />
-            <input type="password" placeholder="Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25">
-            <input type="password" placeholder="Confirmer Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25">
+        <input type="email" placeholder="Email" [(ngModel)]='user_part.email' name='email' id='email'/> 
+        <input type="email" placeholder="Confirmer Adresse Mail" />
+        <input type="text" id="name" name="name" required minlength="3" maxlength="20" placeholder="Nom" 
+        [(ngModel)]='user_part.nom' name='nom'>
+        <input type="text" placeholder="Prénom" required maxlength="14" [(ngModel)]="user_part.prenom" name="prenom"/>
+        <input type="text" placeholder="Localite" required maxlength="5" [(ngModel)]="user_part.localite" name="localite"/>
+        <input type="number" placeholder="Numéro de Téléphone" required maxlength="5" [(ngModel)]="user_part.telephone" name="telephone"/>
+        <input type="password" placeholder="Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25" 
+        [(ngModel)]="user_part.mdp" name="mdp">
+        <input type="password" placeholder="Confirmer Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25">
         </div>
         
         <p class="inscription">J'ai un compte. Je me <a (click)="goToPage('connexion')"><span>connecte</span></a> à mon compte.</p>
         <div align="center">
-        <button type="submit">S'Inscrire</button>
+        <button type="submit" class="button_pro">S'Inscrire</button>
         </div>
     </form>
 
