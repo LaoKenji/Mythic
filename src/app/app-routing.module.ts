@@ -36,7 +36,7 @@ const routes: Routes = [
   {path: "connexion-pro", component: ConnexionProComponent},
   /*{path: "profil-part", component: ProfilPartComponent},
   {path: "profil-pro", component: ProfilProComponent}*/
-  {path: '**', redirectTo: 'acceuil'}
+  {path: '**', redirectTo: 'accueil'}
 ];
 
 @NgModule({
