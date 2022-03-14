@@ -8,6 +8,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'Mythic';
-
-  constructor(private http: HttpClient) { }
+  data = [] as any;
+  isloggedIn!: boolean;
+  roles: undefined;
+  loggedUser: undefined;
+  router: any;
+  constructor(private http: HttpClient)
+  {
+    this.http.get('http://localhost/create_user.php').subscribe(data => {
+    this.data.push(data);
+    console.log(this.data); 
+    }, error => console.error(error));
+  }
 }

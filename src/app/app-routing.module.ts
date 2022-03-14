@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 /* Nav Bar */
 import { AccueilComponent } from './accueil/accueil.component';
-import { ConnexionUserComponent } from '../app/connexion-user/connexion-user.component'
+import { ConnexionUserComponent } from './connexion-user/connexion-user.component'
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
 import { PanierComponent } from './panier/panier.component';
 import { AjoutOffreComponent } from './ajout-offre/ajout-offre.component';
@@ -17,11 +17,13 @@ import { PageProduitComponent } from './page-produit/page-produit.component';
 import { FooterComponent } from './footer/footer.component';
 import { SeparationInscriptionUserComponent } from './separation-inscription-user/separation-inscription-user.component';
 import { InscriptionProComponent } from './inscription-pro/inscription-pro.component';
+import { SeparationConnexionUserComponent } from './separation-connexion-user/separation-connexion-user.component';
+import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 
 const routes: Routes = [
   {path: "accueil" , component: AccueilComponent },
   {path: "ajout_offre" , component: AjoutOffreComponent },
-  {path: "connexion" , component: ConnexionUserComponent },
+  {path: "connexion" , component: SeparationConnexionUserComponent },
   {path: "inscription" , component: SeparationInscriptionUserComponent },
   {path: "pagelisteproduit", component: PageListeProduitComponent},
   {path: "pagelisteproduit/:id/:libelle_article/:etat/:prix", component: PageListeProduitComponent},
@@ -30,9 +32,11 @@ const routes: Routes = [
   {path: "footer", component: FooterComponent},
   {path: "inscription-part", component: InscriptionUserComponent},
   {path: "inscription-pro", component: InscriptionProComponent},
+  {path: "connexion-part", component: ConnexionUserComponent},
+  {path: "connexion-pro", component: ConnexionProComponent},
   /*{path: "profil-part", component: ProfilPartComponent},
   {path: "profil-pro", component: ProfilProComponent}*/
-  {path: '**', redirectTo: 'accueil' }
+  {path: '**', redirectTo: 'accueil'}
 ];
 
 @NgModule({

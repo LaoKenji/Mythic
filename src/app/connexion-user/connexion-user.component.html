@@ -7,25 +7,26 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 </head>
 
-  <form>
-     
-    <h1>Se connecter</h1>
-    <div class="social-media">
-      <p><i class="fab fa-google"></i></p>
-      <p><i class="fab fa-instagram"></i></p>
-      <p><i class="fab fa-facebook-f"></i></p>
-      <p><i class="fab fa-twitter"></i></p>
-    </div>
-    <p class="choose-email">ou utiliser mon adresse e-mail :</p>
-    
-    <div class="inputs">
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Mot de passe">
-    </div>
+<form (ngSubmit)="SaveData(registerFrom)" #registerFrom="ngForm">
+        
+  <h1>Connexion Particulier</h1>
+  <div class="social-media">
+  <p><i class="fab fa-google"></i></p>
+  <p><i class="fab fa-instagram"></i></p>
+  <p><i class="fab fa-facebook-f"></i></p>
+  <p><i class="fab fa-twitter"></i></p>
+  </div>
+  <p class="choose-email">ou utiliser mon adresse e-mail :</p>
+  
+  <div class="inputs">
+  <input type="email" placeholder="Email" [(ngModel)]='connexion_user_part.email' name='email' id='email'/> 
+  <input type="password" placeholder="Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25" 
+  [(ngModel)]="connexion_user_part.mdp" name="mdp">
+  </div>
     
     <p class="inscription">Je n'ai pas de compte. Je me <a (click)="goToPage('inscription')"><span>crée</span></a> un compte.</p>
     <div align="center">
-      <button type="submit">Se connecter</button>
+      <button type="submit" value="log in">Se connecter</button>
     </div>
   </form>
   
