@@ -3,17 +3,9 @@
 <app-nav-bar></app-nav-bar>
 <app-bloc-recherche></app-bloc-recherche>
 
-<table>
-    <tr>
-      <th>article</th>
-      <th>libellé</th>
-      <th>etat</th>
-    </tr>
-    <tr *ngFor="let mydata of data[0]">
-      <td>{{mydata.id_article}}</td>
-      <td>{{mydata.libelle_article}}</td>
-      <td>{{mydata.etat}}</td>
-    </tr>
-</table>
+
+<div id="content" role="main">
+    <router-outlet></router-outlet>
+</div>
 
 <app-footer class="footer"></app-footer>

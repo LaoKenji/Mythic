@@ -21,12 +21,13 @@ import { SeparationConnexionUserComponent } from './separation-connexion-user/se
 import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 
 const routes: Routes = [
-  {path: "" , component: AccueilComponent },
+  {path: "accueil" , component: AccueilComponent },
   {path: "ajout_offre" , component: AjoutOffreComponent },
   {path: "connexion" , component: SeparationConnexionUserComponent },
   {path: "inscription" , component: SeparationInscriptionUserComponent },
   {path: "pagelisteproduit", component: PageListeProduitComponent},
-  {path: "page-produit", component: PageProduitComponent},
+  {path: "pagelisteproduit/:id/:libelle_article/:etat/:prix", component: PageListeProduitComponent},
+  {path: "page-produit/:id_article", component: PageProduitComponent},
   {path: "panier", component: PanierComponent},
   {path: "footer", component: FooterComponent},
   {path: "inscription-part", component: InscriptionUserComponent},
@@ -35,7 +36,7 @@ const routes: Routes = [
   {path: "connexion-pro", component: ConnexionProComponent},
   /*{path: "profil-part", component: ProfilPartComponent},
   {path: "profil-pro", component: ProfilProComponent}*/
-  {path: '**', redirectTo: '' },
+  {path: '**', redirectTo: 'acceuil'}
 ];
 
 @NgModule({

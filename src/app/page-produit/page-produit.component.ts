@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page-produit',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageProduitComponent implements OnInit {
 
-  constructor() { }
+  data = [] as any;
+  path = "";
+  id = "" as any;
+  constructor(private route : ActivatedRoute,
+    private http : HttpClient) {
+   }
 
   ngOnInit(): void {
   }

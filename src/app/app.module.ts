@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule} from '@angular/material/chips';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {  MatTableModule } from '@angular/material/table';
 
 
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
@@ -24,11 +26,14 @@ import { InscriptionProComponent } from './inscription-pro/inscription-pro.compo
 import { FormsModule } from '@angular/forms';
 import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 import { ConnexionUserComponent } from './connexion-user/connexion-user.component';
+import { NavBarConnectComponent } from './nav-bar-connect/nav-bar-connect.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     ConnexionProComponent,
+    NavBarConnectComponent,
+    ConnexionUserComponent,
     InscriptionUserComponent,
     BlocRechercheComponent,
     PageListeProduitComponent,
@@ -52,6 +57,8 @@ import { ConnexionUserComponent } from './connexion-user/connexion-user.componen
     MatChipsModule,
     BrowserModule,
     FormsModule,
+    MatPaginatorModule,
+    MatTableModule
 
   ],
 

@@ -1,30 +1,13 @@
-
 <br><br><br><br><br><br><br><br>
-<!-- Exemple à bouger par la suite-->
-<div class="liste_produit">
-    <div class="img_liste_produit"><img src="../../assets/ressources/Group 47.png"></div>
-    <div class="categorie_liste_produit">Catégories<img src="../../assets/ressources/Group 27.png"></div>
-    <div class="periode_liste_produit">Périodes<img src="../../assets/ressources/Group 44.png"></div>
-    <div class="etat">Etats
-        <li>
-            <ul>
-                <label for="scales">Neuf</label>
-                <input type="checkbox" id="scales" name="scales" checked disabled>         
-            </ul>
-            <ul>
-                <label for="scales">Bon Etat</label>
-                <input type="checkbox" id="scales" name="scales" disabled>         
-            </ul>
-            <ul>
-                <label for="scales">Correct</label>
-                <input type="checkbox" id="scales" name="scales" disabled>         
-            </ul>
-            <ul>
-                <label for="scales">Mauvaise Etat</label>
-                <input type="checkbox" id="scales" name="scales" disabled>         
-            </ul>
-        </li>
-    </div>
-    <div class="prix_liste_produit">Prix</div>
-    <div class="description_liste_produit">Description<div>Armure datant de l’époque du Moyen-Age, servie qu’une fois.</div></div>
-</div>
+<table>
+    <tr>
+      <th>Article</th>
+      <th>Etat</th>
+      <th>Prix</th>
+    </tr>
+    <tr *ngFor="let mydata of data[0]">
+      <td>{{mydata.libelle_article}}</td>
+      <td>{{mydata.etat}}</td>
+      <td>{{mydata.prix}}</td>
+    </tr>
+</table>

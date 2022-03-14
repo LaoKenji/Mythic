@@ -41,8 +41,8 @@
 <!--Liste de tout les produits (faire une boucle While avec JS pour faire apparaitre toute les annonces)-->
 <!-- Exemple à bouger par la suite-->
 <div class="liste_produit">
-    <a routerLink="/page-produit">
-      <table class="tab">
+    
+      <!-- <table class="tab">
         <thead>
           <tr>
             <td class="img_liste_produit"><img class="img_prod" src="../../assets/ressources/Group 47.png"></td>
@@ -52,7 +52,35 @@
             <td class="prix_liste_produit"><h3>Prix</h3></td>
           </tr>
         </thead>
-        </table>
-    </a>
-    
+      </table> -->
+      
+      <table>
+          <tr>
+            <th>#</th>
+            <th>Article</th>
+            <th>Etat</th>
+            <th>Prix</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let mydata of data[0]">
+            <td>{{mydata.id_article}}</td>
+            <td>{{mydata.libelle_article}}</td>
+            <td>{{mydata.etat}}</td>
+            <td>{{mydata.prix}}</td>
+            <td><a routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}"><button>Voir article</button></a></td>
+            <!-- (click)="click(mydata.id_article)" -->
+          </tr>
+      </table>
+       
+</div>
+<div>
+  <table>
+    <tr>
+      <td>Id: {{produit.id}}</td>
+      <td>Article: {{produit.libelle_article}}</td>
+      <td>Etat: {{produit.etat}}</td>
+      <td>Prix: {{produit.prix}}</td>
+    </tr>
+  </table>
+  
 </div>
