@@ -11,12 +11,14 @@ export class PageListeProduitComponent implements OnInit {
   
   isSelected = false;
   path = "";
+
   public produit = {  
     id: "" as any,   
     libelle_article: "" as any,   
     etat: "" as any,
     prix: "" as any  
-   }; 
+  };
+
   data = [] as any;
   constructor(private http: HttpClient,
     private router : Router,
@@ -33,8 +35,7 @@ export class PageListeProduitComponent implements OnInit {
       this.produit.libelle_article=params.get('libelle_article');
       this.produit.etat=params.get('etat');
       this.produit.prix=params.get('prix');
-    }); 
-    
+    });
   }
 
   navigateTo(row: any) {
@@ -65,15 +66,13 @@ export class PageListeProduitComponent implements OnInit {
     moveItemInArray(this.epoque, event.previousIndex, event.currentIndex);
  }
  selected() {
-   if (this.isSelected = false) {
-     this.isSelected = true;
-   }
+    this.isSelected = true;
+    console.log(this.isSelected);
  }
 
  notSelected () {
-  if (this.isSelected = true) {
     this.isSelected = false;
-  }
+    console.log(this.isSelected);
  }
 
 
