@@ -3,28 +3,38 @@
 
 <h2>Panier</h2>
 
-<div class="zone_article">
-    <table class="tab">
-        <thead>
-          <tr>
-            <td class="img_liste_produit"><img class="img_prod" src="../../assets/ressources/Group 47.png"></td>
-            <td class="categorie_liste_produit"><h3>Catégories</h3><img class="img_categorie"src="../../assets/ressources/Group 27.png"></td>
-            <td class="periode_liste_produit"><h3>Périodes</h3><img class="img_periode" src="../../assets/ressources/Group 44.png"></td>
-            <td class="description_liste_produit"><h3>Description</h3><p>Armure datant de l’époque du Moyen-Age, servie qu’une fois.</p></td>
-            <td class="prix_liste_produit"><h3>Prix</h3></td>
-          </tr>
-        </thead>
-        </table>
-    <div class="articles">
-        
-    </div>
-    <div class="articles">
-        
-    </div>
-</div>
-
 <!-- Remplacer X article par nb d'article dans le panier-->
 <!-- Remplacer Prix par le des articles dans le panier-->
+message : {{message}} <br>
+
+<!-- <div class="cart-item">
+  <tr *ngFor="let item of items">
+    <td>Id : {{ item.id }}</td>
+    <td>Libellé : {{ item.libelle_article }}</td>
+    <td>Libellé : {{ item.etat }}</td>
+    <td>Libellé : {{ item.prix }}</td>
+  </tr>
+  aller
+</div> -->
+<table>
+  <tr>
+    <th>#</th>
+    <th>Article</th>
+    <th>Etat</th>
+    <th>Prix</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let mydata of items">
+    <td>{{mydata.id}}</td>
+    <td>{{mydata.libelle_article}}</td>
+    <td>{{mydata.etat}}</td>
+    <td>{{mydata.prix}}</td>
+    <td><button (click)="deleteRow(mydata)">Enlever du panier</button></td>
+  </tr>
+</table>
+
+moi
+
 
 <div class="paiment">
     <div>

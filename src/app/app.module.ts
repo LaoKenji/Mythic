@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule} from '@angular/material/chips';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {  MatTableModule } from '@angular/material/table';
 
@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 import { ConnexionUserComponent } from './connexion-user/connexion-user.component';
 import { NavBarConnectComponent } from './nav-bar-connect/nav-bar-connect.component';
+import { PanierComponent } from './panier/panier.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { NavBarConnectComponent } from './nav-bar-connect/nav-bar-connect.compon
     InscriptionProComponent,
     ConnexionUserComponent,
     SeparationConnexionUserComponent,
+    PanierComponent,
 
   ],
   imports: [
@@ -58,7 +60,8 @@ import { NavBarConnectComponent } from './nav-bar-connect/nav-bar-connect.compon
     BrowserModule,
     FormsModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    CommonModule
 
   ],
 

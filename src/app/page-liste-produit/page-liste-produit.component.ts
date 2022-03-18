@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, NavigationEnd, ParamMap, Router } from '@angular/router';
+import { ApiService } from '../api.service';
+import { Produit } from '../produit';
 @Component({
   selector: 'app-page-liste-produit',
   templateUrl: './page-liste-produit.component.html',
@@ -11,6 +13,7 @@ export class PageListeProduitComponent implements OnInit {
   
   isSelected = false;
   path = "";
+  message = "";
 
   public produit = {  
     id: "" as any,   
@@ -22,7 +25,8 @@ export class PageListeProduitComponent implements OnInit {
   data = [] as any;
   constructor(private http: HttpClient,
     private router : Router,
-    private route : ActivatedRoute) {
+    private route : ActivatedRoute,
+    private api : ApiService) {
     this.http.get('http://localhost/article.php').subscribe(data => {
     this.data.push(data);
     console.log(this.data);
@@ -49,6 +53,7 @@ export class PageListeProduitComponent implements OnInit {
       this.produit.prix=params.get('prix');
     });
     this.isSelectedPage();
+    this.api.currentMessage.subscribe(message => this.message = message)
   }
 
 
@@ -96,6 +101,15 @@ export class PageListeProduitComponent implements OnInit {
     } else {
       this.isSelected = true;
     }
+  }
+
+  ajouterProduit () {
+    this.api.changeMessage(this.produit.libelle_article);
+  }
+
+  addToCart(product: Produit) {
+    this.api.addToCart(product);
+    window.alert('Your product has been added to the cart!');
   }
 
 }

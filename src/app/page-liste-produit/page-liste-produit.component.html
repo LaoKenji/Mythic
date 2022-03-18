@@ -74,6 +74,7 @@
       <td>Etat: {{produit.etat}}</td>
       <td>Prix: {{produit.prix}}</td>
       <td><a routerLink="/pagelisteproduit/:id/:libelle_article/:etat/:prix"><button (click)="notSelected()">Retour</button></a></td>
+      <td><button (click)="addToCart(produit)">Ajouter au panier</button></td>
     </tr>
   </table>
   
