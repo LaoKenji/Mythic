@@ -14,10 +14,6 @@ export class ApiService {
 
   constructor() { }
 
-  changeMessage(message : string) {
-    this.messageSource.next(message);
-  }
-
   addToCart(product: Produit) {
     this.items.push(product);
   }

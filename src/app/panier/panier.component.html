@@ -3,27 +3,7 @@
 
 <h2>Panier</h2>
 
-<!-- Remplacer X article par nb d'article dans le panier-->
-<!-- Remplacer Prix par le des articles dans le panier-->
-message : {{message}} <br>
-
-<!-- <div class="cart-item">
-  <tr *ngFor="let item of items">
-    <td>Id : {{ item.id }}</td>
-    <td>Libellé : {{ item.libelle_article }}</td>
-    <td>Libellé : {{ item.etat }}</td>
-    <td>Libellé : {{ item.prix }}</td>
-  </tr>
-  aller
-</div> -->
 <table>
-  <tr>
-    <th>#</th>
-    <th>Article</th>
-    <th>Etat</th>
-    <th>Prix</th>
-    <th></th>
-  </tr>
   <tr *ngFor="let mydata of items">
     <td>{{mydata.id}}</td>
     <td>{{mydata.libelle_article}}</td>
@@ -32,9 +12,6 @@ message : {{message}} <br>
     <td><button (click)="deleteRow(mydata)">Enlever du panier</button></td>
   </tr>
 </table>
-
-moi
-
 
 <div class="paiment">
     <div>

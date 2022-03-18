@@ -103,13 +103,16 @@ export class PageListeProduitComponent implements OnInit {
     }
   }
 
-  ajouterProduit () {
-    this.api.changeMessage(this.produit.libelle_article);
-  }
-
   addToCart(product: Produit) {
+    product = {
+      id : this.produit.id,
+      libelle_article : this.produit.libelle_article,
+      etat : this.produit.etat,
+      prix : this.produit.prix
+    };
     this.api.addToCart(product);
     window.alert('Your product has been added to the cart!');
+    console.log(product);
   }
 
 }
