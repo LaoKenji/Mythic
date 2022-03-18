@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, ParamMap, Router } from '@angular/router';
 @Component({
   selector: 'app-page-liste-produit',
   templateUrl: './page-liste-produit.component.html',
@@ -27,6 +27,18 @@ export class PageListeProduitComponent implements OnInit {
     this.data.push(data);
     console.log(this.data);
     }, error => console.error(error));
+
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        if (this.router.url !== '/pagelisteproduit/:id/:libelle_article/:etat/:prix') {
+          this.isSelected = true;
+        }
+        if (this.router.url === '/pagelisteproduit/:id/:libelle_article/:etat/:prix') {
+          this.isSelected = false;
+        }
+      }
+      return;
+  });
   }
 
   ngOnInit(): void {
@@ -66,24 +78,25 @@ export class PageListeProduitComponent implements OnInit {
   drop(event: CdkDragDrop<Categorie[], Epoque[] >) {
     moveItemInArray(this.categorie, event.previousIndex, event.currentIndex);
     moveItemInArray(this.epoque, event.previousIndex, event.currentIndex);
- }
- selected() {
-    this.isSelected = true;
-    console.log(this.isSelected);
- }
-
- notSelected () {
-    this.isSelected = false;
-    console.log(this.isSelected);
- }
-
- isSelectedPage() {
-  if (this.router.url === '/pagelisteproduit/:id/:libelle_article/:etat/:prix') {
-    this.isSelected = false;
-  } else {
-    this.isSelected = true;
   }
- }
+
+  selected() {
+    this.isSelected = true;
+    console.log(this.isSelected);
+  }
+
+  notSelected () {
+    this.isSelected = false;
+    console.log(this.isSelected);
+  }
+
+  isSelectedPage() {
+    if (this.router.url === '/pagelisteproduit/:id/:libelle_article/:etat/:prix') {
+      this.isSelected = false;
+    } else {
+      this.isSelected = true;
+    }
+  }
 
 }
 export interface Categorie {
