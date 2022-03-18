@@ -36,7 +36,9 @@ export class PageListeProduitComponent implements OnInit {
       this.produit.etat=params.get('etat');
       this.produit.prix=params.get('prix');
     });
+    this.isSelectedPage();
   }
+
 
   navigateTo(row: any) {
     this.router.navigate(['/maintenance/data/'+row.id]);
@@ -75,6 +77,13 @@ export class PageListeProduitComponent implements OnInit {
     console.log(this.isSelected);
  }
 
+ isSelectedPage() {
+  if (this.router.url === '/pagelisteproduit/:id/:libelle_article/:etat/:prix') {
+    this.isSelected = false;
+  } else {
+    this.isSelected = true;
+  }
+ }
 
 }
 export interface Categorie {
