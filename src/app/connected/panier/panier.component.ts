@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ApiService } from '../api.service';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-panier',

@@ -26,6 +26,7 @@ import { FormsModule } from '@angular/forms';
 import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 import { ConnexionUserComponent } from './connexion-user/connexion-user.component';
 import { LoginComponent } from './login/login.component';
+import { PanierComponent } from './connected/panier/panier.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { LoginComponent } from './login/login.component';
     ConnexionUserComponent,
     SeparationConnexionUserComponent,
     LoginComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,
