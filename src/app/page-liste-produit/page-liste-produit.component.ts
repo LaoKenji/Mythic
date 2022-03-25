@@ -53,7 +53,6 @@ export class PageListeProduitComponent implements OnInit {
       this.produit.prix=params.get('prix');
     });
     this.isSelectedPage();
-    this.api.currentMessage.subscribe(message => this.message = message)
   }
 
 
@@ -111,7 +110,7 @@ export class PageListeProduitComponent implements OnInit {
       prix : this.produit.prix
     };
     this.api.addToCart(product);
-    window.alert('Your product has been added to the cart!');
+    window.alert('Le produit a été ajouté au panier');
     console.log(product);
   }
 

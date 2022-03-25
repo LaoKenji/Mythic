@@ -9,9 +9,6 @@ export class ApiService {
 
   items: Produit[] = [];
 
-  private messageSource = new BehaviorSubject('Panier vide');
-  currentMessage = this.messageSource.asObservable()
-
   constructor() { }
 
   addToCart(product: Produit) {
