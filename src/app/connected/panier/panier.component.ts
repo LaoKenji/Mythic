@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-panier',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanierComponent implements OnInit {
 
-  constructor() { }
+  items = this.api.getItems();
+  constructor(private api : ApiService) { }
 
   ngOnInit(): void {
   }
 
+  deleteRow(p: any){
+    const index = this.items.indexOf(p);
+    this.items.splice(index, 1);
+  }
 }
