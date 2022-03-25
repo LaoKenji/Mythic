@@ -9,13 +9,15 @@ export class ApiService {
 
   items: Produit[] = [];
 
-  constructor() { }
+  constructor() { 
+  }
 
   addToCart(product: Produit) {
     this.items.push(product);
   }
 
   getItems() {
+    localStorage.getItem(JSON.stringify(this.items))
     return this.items;
   }
 
