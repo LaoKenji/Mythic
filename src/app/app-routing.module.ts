@@ -13,7 +13,6 @@ import { ProfilProComponent } from './profil-pro/profil-pro.component';*/
 
 
 import { PageListeProduitComponent } from './page-liste-produit/page-liste-produit.component';
-import { PageProduitComponent } from './page-produit/page-produit.component';
 import { FooterComponent } from './footer/footer.component';
 import { SeparationInscriptionUserComponent } from './separation-inscription-user/separation-inscription-user.component';
 import { InscriptionProComponent } from './inscription-pro/inscription-pro.component';
@@ -27,7 +26,6 @@ const routes: Routes = [
   {path: "inscription" , component: SeparationInscriptionUserComponent },
   {path: "pagelisteproduit", component: PageListeProduitComponent},
   {path: "pagelisteproduit/:id/:libelle_article/:etat/:prix", component: PageListeProduitComponent},
-  {path: "page-produit/:id_article", component: PageProduitComponent},
   {path: "panier", component: PanierComponent},
   {path: "footer", component: FooterComponent},
   {path: "inscription-part", component: InscriptionUserComponent},

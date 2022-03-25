@@ -16,7 +16,6 @@ import {  MatTableModule } from '@angular/material/table';
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
 import { BlocRechercheComponent } from './bloc-recherche/bloc-recherche.component';
 import { PageListeProduitComponent } from './page-liste-produit/page-liste-produit.component';
-import { PageProduitComponent } from './page-produit/page-produit.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AjoutOffreComponent } from './ajout-offre/ajout-offre.component';
 import { FooterComponent } from './footer/footer.component';
@@ -38,7 +37,6 @@ import { PanierComponent } from './panier/panier.component';
     InscriptionUserComponent,
     BlocRechercheComponent,
     PageListeProduitComponent,
-    PageProduitComponent,
     AccueilComponent,
     AjoutOffreComponent,
     FooterComponent,
