@@ -6,8 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionUserComponent } from './connexion-user/connexion-user.component'
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
-import { PanierComponent } from './panier/panier.component';
-import { AjoutOffreComponent } from './ajout-offre/ajout-offre.component';
+import { PanierComponent } from './connected/panier/panier.component';
+import { AjoutOffreComponent } from './connected/ajout-offre/ajout-offre.component';
 /*import { ProfilPartComponent } from './profil-part/profil-part.component';
 import { ProfilProComponent } from './profil-pro/profil-pro.component';*/
 
@@ -19,6 +19,11 @@ import { SeparationInscriptionUserComponent } from './separation-inscription-use
 import { InscriptionProComponent } from './inscription-pro/inscription-pro.component';
 import { SeparationConnexionUserComponent } from './separation-connexion-user/separation-connexion-user.component';
 import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
+
+
+import { LoginComponent } from './login/login.component';
+import { AuthguardGuard } from './auth.guard';
+
 
 const routes: Routes = [
   {path: "accueil" , component: AccueilComponent },
@@ -36,7 +41,12 @@ const routes: Routes = [
   {path: "connexion-pro", component: ConnexionProComponent},
   /*{path: "profil-part", component: ProfilPartComponent},
   {path: "profil-pro", component: ProfilProComponent}*/
-  {path: '**', redirectTo: 'accueil'}
+  
+
+  { path: "login", component: LoginComponent },
+
+
+  {path: '**', redirectTo: 'accueil'},
 ];
 
 @NgModule({

@@ -10,30 +10,30 @@
         
         <h1>Inscription Professionel</h1>
         <div class="social-media">
-        <p><i class="fab fa-google"></i></p>
-        <p><i class="fab fa-instagram"></i></p>
-        <p><i class="fab fa-facebook-f"></i></p>
-        <p><i class="fab fa-twitter"></i></p>
+            <p><i class="fab fa-google"></i></p>
+            <p><i class="fab fa-instagram"></i></p>
+            <p><i class="fab fa-facebook-f"></i></p>
+            <p><i class="fab fa-twitter"></i></p>
         </div>
         <p class="choose-email">ou utiliser mon adresse e-mail :</p>
         
         <div class="inputs">
-        <input type="email" placeholder="Email" [(ngModel)]='user_pro.email' name='email' id='email'/> 
-        <input type="email" placeholder="Confirmer Adresse Mail" />
-        <input type="text" id="name" name="name" required minlength="3" maxlength="20" placeholder="Nom de l'entreprise (entre 3 et 20 charactères)" 
-        [(ngModel)]='user_pro.nom_entreprise' name='nom_entreprise'>
-        <input type="number" placeholder="Numéro de Siret" required max="14" [(ngModel)]="user_pro.siret" name="siret"/>
-        <input type="number" placeholder="Code APE" required max="99999" [(ngModel)]="user_pro.code_ape" name="code_ape"/>
-        <input type="password" placeholder="Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25" 
-        [(ngModel)]="user_pro.mdp" name="mdp">
-        <input type="password" placeholder="Confirmer Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25">
+            <input type="email" placeholder="Email" [(ngModel)]='user_pro.email' name='email' id='email'/> 
+            <input type="email" placeholder="Confirmer Adresse Mail" />
+            <input type="text" id="name" name="name" required minlength="3" maxlength="20" placeholder="Nom de l'entreprise (entre 3 et 20 charactères)" 
+            [(ngModel)]='user_pro.nom_entreprise' name='nom_entreprise'>
+            <input type="number" placeholder="Numéro de Siret" required max="14" [(ngModel)]="user_pro.siret" name="siret"/>
+            <input type="number" placeholder="Code APE" required max="99999" [(ngModel)]="user_pro.code_ape" name="code_ape"/>
+            <input type="password" placeholder="Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25" 
+            [(ngModel)]="user_pro.mdp" name="mdp">
+            <input type="password" placeholder="Confirmer Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25">
         </div>
         
         <p class="inscription">J'ai un compte. Je me <a (click)="goToPage('connexion')"><span>connecte</span></a> à mon compte.</p>
         <div align="center">
-        <button type="submit" class="button_pro">S'Inscrire</button>
-        <!-- <div class ="alert alert-danger" *ngIf="erreur==1">
-            <strong>login ou mot de passe erronés..</strong>
-        </div> -->
+            <button type="submit" class="button_pro">S'Inscrire</button>
+            <!-- <div class ="alert alert-danger" *ngIf="erreur==1">
+                <strong>login ou mot de passe erronés..</strong>
+            </div> -->
         </div>
     </form>

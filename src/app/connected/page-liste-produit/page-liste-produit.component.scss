@@ -1,0 +1,104 @@
+.Filtre{
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.liste_produit{
+    padding: 0px;
+    margin:0 auto;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 50%;
+    flex-wrap: wrap;    
+    justify-content: space-between;
+    align-content: space-between;
+    
+}
+
+
+
+.img_liste_produit{
+    border: 1px solid black;
+    margin: 2px;
+    padding: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    border-radius: 5px;
+    width: 25%;
+    text-align: center;
+    
+}
+
+.categorie_liste_produit{
+    border: 1px solid black;
+    margin: 2px;
+    padding: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    border-radius: 5px;
+    width: 25%;
+}
+
+.periode_liste_produit{
+    border: 1px solid black;
+    margin: 2px;
+    padding: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #F4F3F3;
+    border-radius: 5px;
+    width: 25%;
+}
+
+.description_liste_produit{
+    border: 1px solid black;
+    margin: 2px;
+    padding: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #F4F3F3;
+    border-radius: 5px;
+    width: 25%;
+}
+
+.prix_liste_produit{
+    border: 1px solid black;
+    margin: 2px;
+    padding: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #F4F3F3;
+    border-radius: 5px;
+    width: 25%;
+}
+
+/* unvisited link */
+a:link {
+    color: black,
+}
+  
+  /* visited link */
+a:visited {
+    color: black,
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  

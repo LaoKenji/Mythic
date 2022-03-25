@@ -10,30 +10,30 @@
 
         <label>Sélectionner la Catégorie de l'objet</label>
         <mat-chip-list
-        class="example-chip"
-        cdkDropList 
-        cdkDropListOrientation="horizontal"
-        >
-        <mat-chip
-        class="example-box"
-        cdkDrag
-        *ngFor="let categorie of categorie">
-        {{categorie.name}}
+            class="example-chip"
+            cdkDropList 
+            cdkDropListOrientation="horizontal"
+            >
+            <mat-chip
+            class="example-box"
+            cdkDrag
+            *ngFor="let categorie of categorie">
+            {{categorie.name}}
         </mat-chip>
     </mat-chip-list>
 
     <br>
         <label>Sélectionner l'Epoque de l'objet</label>
         <mat-chip-list
-        class="example-chip"
-        cdkDropList 
-        cdkDropListOrientation="horizontal"
-        >
-        <mat-chip
-        class="example-box"
-        cdkDrag
-        *ngFor="let epoque of epoque">
-        {{epoque.name}}
+            class="example-chip"
+            cdkDropList 
+            cdkDropListOrientation="horizontal"
+            >
+            <mat-chip
+            class="example-box"
+            cdkDrag
+            *ngFor="let epoque of epoque">
+            {{epoque.name}}
         </mat-chip>
     </mat-chip-list>
 

@@ -1,0 +1,34 @@
+*{
+    margin: 0px;
+    padding: 15px;
+}
+
+.caroussel{
+    border: 1px solid black;
+    margin: 0 auto;
+    display: flex;
+}
+
+/* unvisited link */
+a:link {
+    color: black
+}
+  
+  /* visited link */
+a:visited {
+    color: black
+}
+
+drag-scroll {
+    height: 50px;
+    width: 100px;
+}
+
+drag-scroll {
+    height: 50px;
+    width: 100px;
+}
+img-carrousel {
+    height: 50px;
+    width: 50px;
+  }

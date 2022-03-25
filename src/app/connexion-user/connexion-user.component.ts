@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-connexion-user',
   templateUrl: './connexion-user.component.html',
-  styleUrls: ['./connexion-user.component.scss']
+  styleUrls: ['connexion-user.component.scss']
 })
 export class ConnexionUserComponent implements OnInit {
 
@@ -36,5 +36,9 @@ export class ConnexionUserComponent implements OnInit {
     console.log(this.data); 
     }, error => console.error(error));
   }
+
+/*   getToken(){
+    return localStorage.getItem('token')
+  } */
 
 }
