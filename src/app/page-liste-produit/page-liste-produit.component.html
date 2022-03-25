@@ -1,38 +1,32 @@
-<app-bloc-recherche></app-bloc-recherche>
+<app-bloc-recherche *ngIf="!isSelected"></app-bloc-recherche>
 
 <!--Filtre-->
-<div class="Filtre">
+<div class="Filtre" *ngIf="!isSelected">
     <!--Filtre pro/part -->
     <h2>Annonces: </h2>
     <ul>
-    <li>
-    <label class="container_check">Professionnels
-    <input type="checkbox">
-    <span class="checkmark"></span>
-    </label>
-    </li>
-    <li><label class="container_check">Particuliers
-    <input type="checkbox">
-    <span class="checkmark"></span>
-    </label>
-    </li>
+      <li>
+        <label class="container_check">Professionnels
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      </li>
+      <li>
+        <label class="container_check">Particuliers
+        <input type="checkbox">
+        <span class="checkmark"></span>
+      </label>
+      </li>
     </ul>
 
     <!--Filtre objets-->
     <label>Sélectionner l'Epoque de l'objet</label>
     <br><br>
-    <mat-chip-list
-    class="example-chip"
-    cdkDropList 
-    cdkDropListOrientation="horizontal"
-    >
-    <mat-chip
-    class="example-box"
-    cdkDrag
-    *ngFor="let epoque of epoque">
-    {{epoque.name}}
-    </mat-chip>
-</mat-chip-list>
+    <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+      <mat-chip class="example-box" cdkDrag *ngFor="let epoque of epoque">
+        {{epoque.name}}
+      </mat-chip>
+    </mat-chip-list>
 
 
 </div>
@@ -40,7 +34,7 @@
 
 <!--Liste de tout les produits (faire une boucle While avec JS pour faire apparaitre toute les annonces)-->
 <!-- Exemple à bouger par la suite-->
-<div class="liste_produit">
+<div class="liste_produit" *ngIf="!isSelected">
     
       <!-- <table class="tab">
         <thead>
@@ -67,19 +61,19 @@
             <td>{{mydata.libelle_article}}</td>
             <td>{{mydata.etat}}</td>
             <td>{{mydata.prix}}</td>
-            <td><a routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}"><button>Voir article</button></a></td>
-            <!-- (click)="click(mydata.id_article)" -->
+            <td><a routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}"><button (click)="selected()">Voir article</button></a></td>
           </tr>
       </table>
-       
 </div>
 <div>
-  <table>
+
+  <table *ngIf="isSelected">
     <tr>
       <td>Id: {{produit.id}}</td>
       <td>Article: {{produit.libelle_article}}</td>
       <td>Etat: {{produit.etat}}</td>
       <td>Prix: {{produit.prix}}</td>
+      <td><a routerLink="/pagelisteproduit/:id/:libelle_article/:etat/:prix"><button (click)="notSelected()">Retour</button></a></td>
     </tr>
   </table>
   
