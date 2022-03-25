@@ -27,10 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 import { ConnexionUserComponent } from './connexion-user/connexion-user.component';
 import { NavBarConnectComponent } from './connected/nav-bar-connect/nav-bar-connect.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,10 +46,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     InscriptionProComponent,
     ConnexionUserComponent,
     SeparationConnexionUserComponent,
-    HomeComponent,
-    LoginComponent,
-    RegisterComponent,
-    DashboardComponent,
+    LoginComponent
     
 
   ],
