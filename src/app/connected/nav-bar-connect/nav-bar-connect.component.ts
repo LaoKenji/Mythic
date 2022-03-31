@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar-connect',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar-connect.component.scss']
 })
 export class NavBarConnectComponent implements OnInit {
+  router: any;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  goToPage(pageName : string):void {
+    this.router.navigate([`${pageName}`])
   }
 
 }

@@ -1,10 +1,10 @@
+import { AccueilConnectComponent } from './connected/accueil_connect/accueil_connect.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 /* Nav Bar */
 import { AccueilComponent } from './accueil/accueil.component';
-import { ConnexionUserComponent } from './connexion-user/connexion-user.component'
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
 import { PanierComponent } from './connected/panier/panier.component';
 import { AjoutOffreComponent } from './connected/ajout-offre/ajout-offre.component';
@@ -35,13 +35,12 @@ const routes: Routes = [
   {path: "footer", component: FooterComponent},
   {path: "inscription-part", component: InscriptionUserComponent},
   {path: "inscription-pro", component: InscriptionProComponent},
-  {path: "connexion-part", component: ConnexionUserComponent},
   {path: "connexion-pro", component: ConnexionProComponent},
   /*{path: "profil-part", component: ProfilPartComponent},
   {path: "profil-pro", component: ProfilProComponent}*/
   
-
-  { path: "login", component: LoginComponent },
+  { path: "acceuil-connect", component: AccueilConnectComponent },
+  { path: "connexion-part", component: LoginComponent },
 
 
   {path: '**', redirectTo: 'accueil'},

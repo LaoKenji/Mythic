@@ -29,7 +29,8 @@ li{
 }
 
 .ajouter_offre{
-    background-color: white;
+    border: 1px solid black;
+    background-color: #FFAC4B;
     padding: 5px;
     border-radius: 5px;
     
@@ -41,25 +42,43 @@ li{
 .conn_ins{
     float: right;
     align-items: center;
-    margin-top:-80px;
+    margin-top:-6%;
     background-color: transparent;
     display: flex;
 }
 
 .connexion{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+}
+
+
+.btn_inscription{
+    border: 1px solid black;
+    padding: 2px;
+    background-color: #FFAC4B;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.pannier{
+    padding: 14px 16px;
+    text-decoration: none;
+    display: flex;
+    width: 45px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     background-color: white;
-    padding: 5px;
-    border-radius: 5px;
-    
+    align-items: center;
 }
-
-.inscription{
-    background-color: orange;
-    padding: 5px;
-    border-radius: 5px;
-    
+h1{
+    margin-top:15%;
 }
-
 /* unvisited link */
 a:link {
     color: black

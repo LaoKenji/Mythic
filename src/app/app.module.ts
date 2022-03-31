@@ -1,3 +1,4 @@
+import { NavBarConnectComponent } from './connected/nav-bar-connect/nav-bar-connect.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -24,16 +25,15 @@ import { SeparationConnexionUserComponent } from './separation-connexion-user/se
 import { InscriptionProComponent } from './inscription-pro/inscription-pro.component';
 import { FormsModule } from '@angular/forms';
 import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
-import { ConnexionUserComponent } from './connexion-user/connexion-user.component';
 import { LoginComponent } from './login/login.component';
 import { PanierComponent } from './connected/panier/panier.component';
+import { AccueilConnectComponent } from './connected/accueil_connect/accueil_connect.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     ConnexionProComponent,
-    ConnexionUserComponent,
     InscriptionUserComponent,
     BlocRechercheComponent,
     PageListeProduitComponent,
@@ -42,10 +42,11 @@ import { PanierComponent } from './connected/panier/panier.component';
     FooterComponent,
     SeparationInscriptionUserComponent,
     InscriptionProComponent,
-    ConnexionUserComponent,
     SeparationConnexionUserComponent,
     LoginComponent,
-    PanierComponent
+    PanierComponent,
+    NavBarConnectComponent,
+    AccueilConnectComponent,
   ],
   imports: [
     BrowserModule,
