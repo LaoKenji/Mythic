@@ -38,11 +38,13 @@ export class PanierComponent implements OnInit {
   getTotalPrice () {
     let sum: number = 0;
     this.items.forEach(a => sum += +a.prix);
-    this.totalPrice = sum;
+    this.totalPrice = +sum.toFixed(2);
+    
   }
 
   valueChange(p : any) {
     this.totalPrice = this.totalPrice - p;
+    this.totalPrice = +this.totalPrice.toFixed(2);
     console.log(this.totalPrice);
   }
 } 
