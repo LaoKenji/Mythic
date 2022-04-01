@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, NavigationEnd, ParamMap, Router } from '@angular/router';
-import { ApiService } from '../api.service';
 import { Produit } from '../produit';
+import { PanierService } from '../panier.service';
 @Component({
   selector: 'app-page-liste-produit',
   templateUrl: './page-liste-produit.component.html',
@@ -26,7 +26,7 @@ export class PageListeProduitComponent implements OnInit {
   constructor(private http: HttpClient,
     private router : Router,
     private route : ActivatedRoute,
-    private api : ApiService) {
+    private api : PanierService) {
     this.http.get('http://localhost/article.php').subscribe(data => {
     this.data.push(data);
     console.log(this.data);
