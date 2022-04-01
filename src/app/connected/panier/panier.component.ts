@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChange } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { PanierService } from 'src/app/panier.service';
 import { Produit } from 'src/app/produit';
@@ -39,6 +39,10 @@ export class PanierComponent implements OnInit {
     let sum: number = 0;
     this.items.forEach(a => sum += +a.prix);
     this.totalPrice = sum;
-    // expected output: 81
+  }
+
+  valueChange(p : any) {
+    this.totalPrice = this.totalPrice - p;
+    console.log(this.totalPrice);
   }
 } 
