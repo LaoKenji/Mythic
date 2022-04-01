@@ -1,15 +1,14 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { Produit } from './produit';
+
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class ApiService {
-    redirectUrl!: string;
-    items: Produit[] = [];
+    redirectUrl!: string;  
     baseUrl:string = "http://localhost/";
     @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 
@@ -46,21 +45,5 @@ export class ApiService {
         return true
     }
         return false;
-    }
-
-    
-
-    addToCart(product: Produit) {
-        this.items.push(product);
-    }
-
-    getItems() {
-        localStorage.getItem(JSON.stringify(this.items))
-    return this.items;
-    }
-
-    clearCart() {
-        this.items = [];
-    return this.items;
     }
 }
