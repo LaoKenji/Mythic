@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { PanierService } from 'src/app/panier.service';
+import { Produit } from 'src/app/produit';
 
 @Component({
   selector: 'app-panier',
@@ -11,10 +12,9 @@ import { PanierService } from 'src/app/panier.service';
 export class PanierComponent implements OnInit {
 
   items = this.api.getItems();
+  totalPrice = 0;
   constructor(private api : PanierService,
     private http: HttpClient) {}
-
-  data = [] as any;
 
 
   ngOnInit(): void {
@@ -22,6 +22,7 @@ export class PanierComponent implements OnInit {
     // this.data.push(data);
     // console.log(this.data);
     // }, error => console.error(error));
+    this.getTotalPrice();
   }
 
   deleteRow(p: any){
@@ -33,11 +34,11 @@ export class PanierComponent implements OnInit {
     this.api.clearCart();
   }
 
-  deleteLine (donnee : any) {
-    console.log(donnee)
-    this.http.get('http://localhost/delete_panier.php').subscribe(data => {
-    donnee.push(data);
-    console.log(donnee);
-    }, error => console.error(error));
+
+  getTotalPrice () {
+    let sum: number = 0;
+    this.items.forEach(a => sum += +a.prix);
+    this.totalPrice = sum;
+    // expected output: 81
   }
-}
+} 

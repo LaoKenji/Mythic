@@ -10,8 +10,6 @@ export class PanierService {
 
   constructor() { }
   addToCart(product: Produit) {
-    localStorage.setItem("product", JSON.stringify(product));
-    console.log(localStorage.getItem("product"));
     this.items.push(product);
   }
 
