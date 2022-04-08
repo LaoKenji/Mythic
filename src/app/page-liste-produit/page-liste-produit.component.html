@@ -57,7 +57,7 @@
             <th></th>
           </tr>
           <tr *ngFor="let mydata of data[0]">
-            <td>{{mydata.id_article}}</td>
+            <td><img src="http://localhost/export.php?id={{mydata.id_article}}"></td>
             <td>{{mydata.libelle_article}}</td>
             <td>{{mydata.etat}}</td>
             <td>{{mydata.prix}}</td>
@@ -66,9 +66,11 @@
       </table>
 </div>
 <div>
+  <!-- <img src="http://localhost/export.php?id=3"> --> <!-- Pour appeller l'image -->
   <table *ngIf="isSelected">
     <tr>
-      <td>Id: {{produit.id}}</td>
+      <td></td>
+      <td>Id: {{produit.id_img}}</td>
       <td>Article: {{produit.libelle_article}}</td>
       <td>Etat: {{produit.etat}}</td>
       <td>Prix: {{produit.prix}}</td>

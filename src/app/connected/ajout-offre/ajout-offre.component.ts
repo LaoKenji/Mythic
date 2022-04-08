@@ -3,8 +3,10 @@ import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { getMatFormFieldPlaceholderConflictError } from '@angular/material/form-field';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders, HttpEvent} from '@angular/common/http';
 import { ApiService } from '../../api.service';
+import { TestBed } from '@angular/core/testing';
+
 
 
 @Component({
@@ -19,7 +21,7 @@ export class AjoutOffreComponent implements OnInit {
   postId: any;
   baseUrl = 'http://localhost/api/';
 
-
+  selectedFile: any;
   favoriteSeason = '';
   seasons: string[] = ['Armes','Vaisselles','Meubles','Armures', 'Décoration','Peinture','Sculpture','Divers'];
 
@@ -32,6 +34,8 @@ export class AjoutOffreComponent implements OnInit {
 
   recup!: string;
   redirection!: number;
+
+  recupimg: any;
 
   constructor(private fb: FormBuilder, private dataService: ApiService, private router: Router, private http: HttpClient) {
     this.angForm = this.fb.group({
@@ -50,7 +54,6 @@ export class AjoutOffreComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.favoriteSeason2)
   }
 
   categorie: Categorie[] = [
@@ -77,58 +80,80 @@ export class AjoutOffreComponent implements OnInit {
     moveItemInArray(this.epoque, event.previousIndex, event.currentIndex);
  }
  */
+  goToPage(pageName : string):void {
+    this.router.navigate([`${pageName}`])
+  }
 
  //récupere l'epoque du produit
 
- getValueRadioEpoque(epoquerecup : any) {
-    this.favoriteSeason2 = epoquerecup.value;
-    console.log(epoquerecup['value'])
-  }
+ getValueRadioEpoque(epoquerecup: any) {
+   this.favoriteSeason2 = epoquerecup.value;
+   console.log(epoquerecup['value'])
+ }
 
-  getValueRadioCategorie(categorierecup: any){
-    this.favoriteSeason = categorierecup.value;
-    console.log(categorierecup['value'])
-  }
+ getValueRadioCategorie(categorierecup: any) {
+   this.favoriteSeason = categorierecup.value;
+   console.log(categorierecup['value'])
+ }
 
-  getValueRadioEtat(etatrecup: any){
-    this.favoriteSeason3 = etatrecup.value;
-    console.log(etatrecup['value'])
-  }
+ getValueRadioEtat(etatrecup: any) {
+   this.favoriteSeason3 = etatrecup.value;
+   console.log(etatrecup['value'])
+ }
 
-  get nom_article() { return this.angForm.get('nom_article'); }
-  get description() { return this.angForm.get('description'); } //récupére la description
-  get prix() { return this.angForm.get('prix'); }//récupére le prix
+ get nom_article() {
+   return this.angForm.get('nom_article');
+ }
+ get add_img(){
+    return this.angForm.get('add_img');
+ }
+
+ get description() {
+   return this.angForm.get('description');
+ } //récupére la description
+ get prix() {
+   return this.angForm.get('prix');
+ } //récupére le prix
+
+ 
 
  //Envoi données formulaire PHP (description, prix, categorie, epoque )
- getdata(angForm: { value: { description: any; prix: any; nom_article: any}; }) {
-  console.log('valeurs', JSON.stringify(angForm.value), this.favoriteSeason ,this.favoriteSeason2, this.favoriteSeason3);
-  this.http.get('http://localhost/ajout_article.php?description='+angForm.value.description+'&prix='+angForm.value.prix+'&epoque='+this.favoriteSeason2+'&categorie='+this.favoriteSeason+'&nom_article='+angForm.value.nom_article+'&etat='+this.favoriteSeason3,{})
-  .subscribe((data) => {
-  this.postId = data;
-  console.log(this.postId); 
-  },(error: any) => console.error(error));
-
-}
+ getdata(angForm: {value: {description: any;prix: any;nom_article: any};}) {
+   console.log('valeurs', JSON.stringify(angForm.value), this.favoriteSeason, this.favoriteSeason2, this.favoriteSeason3);
+   this.http.get('http://localhost/ajout_article.php?description=' + angForm.value.description + '&prix=' + angForm.value.prix + '&epoque=' + this.favoriteSeason2 + '&categorie=' + this.favoriteSeason + '&nom_article=' + angForm.value.nom_article + '&etat=' + this.favoriteSeason3, {})
+     .subscribe((data) => {
+       this.postId = data;
+       console.log(this.postId);
+     }, (error: any) => console.error(error));
+     alert("Votre Produit à était ajouter !");
+ }
+ 
 
 
 
 
 
 //Envoie IMG au PHP pour l'enregistrer dans le fichier adéquat
-/*   async function upload(type:id) {
-    let FormData = new FormData();
-    FormData.append('file', fileupload.files[0]);
-    FormData.append('type', type);
-    FormData.append('id', id);
-    aswait fetch('php_traitement/ajout_img.php', {method: 'POST'})
-    
+  
+  onFileSelected(event: any){
+    this.selectedFile = <File>event.target.files[0];
   }
 
-  goToPage(pageName : string):void {
-    this.router.navigate([`${pageName}`])
-  } */
+  onUpload(){
+    const fd = new FormData();
+    fd.append('image', this.selectedFile, this.selectedFile.name);
+    this.http.post('http://localhost/ajout_img.php',fd,{
+      reportProgress: true,
+      observe: 'events'
+    })
+    .subscribe(event=>{
+      console.log(event);
+    });
+  }
+
 
 }
+
 export interface Categorie {
   name: string;
 }

@@ -29,7 +29,6 @@ import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 import { LoginComponent } from './login/login.component';
 import { PanierComponent } from './connected/panier/panier.component';
 import { AccueilConnectComponent } from './connected/accueil_connect/accueil_connect.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +62,8 @@ import { AccueilConnectComponent } from './connected/accueil_connect/accueil_con
     MatTableModule,
     ReactiveFormsModule,
     CommonModule,
-    MatRadioModule
+    MatRadioModule,
+    
 
   ],
 

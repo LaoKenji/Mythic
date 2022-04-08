@@ -1,44 +1,51 @@
 <br><br><br><br><br>
 
-<form [formGroup]="angForm" (ngSubmit)="getdata(angForm)" autocomplete="off">
-        
-    <h1>Ajout d'Offre</h1>
+<form [formGroup]="angForm" (ngSubmit)="getdata(angForm)" autocomplete="off" enctype="multipart/form-data">
 
-    
-    <div class="inputs">
-        <!-- <input class="ajout_img" placeholder="Déposer votre Image" type="file"/> -->
-        <input type="text" name="nom_article" formControlName="nom_article" autocomplete="off" class="nom_article" placeholder="Nom Article">
-        <input class="field2" type="file" name="file[]" multiple="multiple" /><br>
+  <h1>Ajout d'Offre</h1>
 
-        <label>Sélectionner la Catégorie de l'objet</label>
 
-          <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season" (change)="getValueRadioCategorie($event)" name="gp1">
-              {{season}}
-          </mat-radio-button>
- 
-    <br>
+  <div class="inputs">
+    <!-- <input class="ajout_img" placeholder="Déposer votre Image" type="file"/> -->
+    <input type="text" name="nom_article" formControlName="nom_article" autocomplete="off" class="nom_article"
+    placeholder="Nom Article"><br>
 
-          <label>
-            Sélectionner l'Epoque de l'objet
-          </label>
-          <mat-radio-button class="example-radio-button" *ngFor="let season of seasons2" [value]="season" (change)="getValueRadioEpoque($event)" name="gp2">
-              {{season}}
-          </mat-radio-button>
-          <!-- <div>LMa saison : {{favoriteSeason}}</div> -->
+    <input class="file-upload" type="file" name="add_img" (change)="onFileSelected($event)"/>
 
-          <label>
-            Sélectionner l'Epoque de l'objet
-          </label>
-          <mat-radio-button class="example-radio-button" *ngFor="let season of seasons3" [value]="season" (change)="getValueRadioEtat($event)" name="gp3">
-              {{season}}
-          </mat-radio-button>
-        
+    <label>Sélectionner la Catégorie de l'objet</label>
+
+    <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season"
+      (change)="getValueRadioCategorie($event)" name="gp1">
+      {{season}}
+    </mat-radio-button>
 
     <br>
 
+    <label>
+      Sélectionner l'Epoque de l'objet
+    </label>
+    <mat-radio-button class="example-radio-button" *ngFor="let season of seasons2" [value]="season"
+      (change)="getValueRadioEpoque($event)" name="gp2">
+      {{season}}
+    </mat-radio-button>
+    <!-- <div>LMa saison : {{favoriteSeason}}</div> -->
 
-        <input type="text" name="description" formControlName="description" autocomplete="off" class="description" placeholder="Description" maxlength="200"> 
-        <input type="number" name="prix" formControlName="prix" autocomplete="off" class="prix" placeholder="Prix">
-    </div>
-    <button type="submit" class="button_ajout_offre">Ajouter Offre</button>
+    <label>
+      Sélectionner l'Epoque de l'objet
+    </label>
+    <mat-radio-button class="example-radio-button" *ngFor="let season of seasons3" [value]="season"
+      (change)="getValueRadioEtat($event)" name="gp3">
+      {{season}}
+    </mat-radio-button>
+
+
+    <br>
+
+
+    <input type="text" name="description" formControlName="description" autocomplete="off" class="description"
+      placeholder="Description" maxlength="200">
+    <input type="number" name="prix" formControlName="prix" autocomplete="off" class="prix" placeholder="Prix">
+  </div>
+  <button type="submit" class="button_ajout_offre" (click)="onUpload()">Ajouter Offre</button>
 </form>
+

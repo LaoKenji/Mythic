@@ -16,7 +16,7 @@ export class PageListeProduitComponent implements OnInit {
   message = "";
 
   public produit = {  
-    id: "" as any,   
+    id_img: "" as any,   
     libelle_article: "" as any,   
     etat: "" as any,
     prix: "" as any  
@@ -47,12 +47,13 @@ export class PageListeProduitComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params : ParamMap)=> {  
-      this.produit.id=params.get('id');
+      this.produit.id_img=params.get('id');
       this.produit.libelle_article=params.get('libelle_article');
       this.produit.etat=params.get('etat');
       this.produit.prix=params.get('prix');
     });
     this.isSelectedPage();
+    console.log(this.data.id_img)
   }
 
 
@@ -104,7 +105,7 @@ export class PageListeProduitComponent implements OnInit {
 
   addToCart(product: Produit) {
     product = {
-      id : this.produit.id,
+      id_img : this.produit.id_img,
       libelle_article : this.produit.libelle_article,
       etat : this.produit.etat,
       prix : this.produit.prix
