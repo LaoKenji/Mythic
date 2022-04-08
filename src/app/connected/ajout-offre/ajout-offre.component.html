@@ -1,52 +1,44 @@
 <br><br><br><br><br>
 
-<form>
+<form [formGroup]="angForm" (ngSubmit)="getdata(angForm)" autocomplete="off">
         
     <h1>Ajout d'Offre</h1>
 
     
     <div class="inputs">
-        <input class="ajout_img" placeholder="Déposer votre Image" />
+        <!-- <input class="ajout_img" placeholder="Déposer votre Image" type="file"/> -->
+        <input type="text" name="nom_article" formControlName="nom_article" autocomplete="off" class="nom_article" placeholder="Nom Article">
+        <input class="field2" type="file" name="file[]" multiple="multiple" /><br>
 
         <label>Sélectionner la Catégorie de l'objet</label>
-        <mat-chip-list
-            class="example-chip"
-            cdkDropList 
-            cdkDropListOrientation="horizontal"
-            >
-            <mat-chip
-            class="example-box"
-            cdkDrag
-            *ngFor="let categorie of categorie">
-            {{categorie.name}}
-        </mat-chip>
-    </mat-chip-list>
 
+          <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season" (change)="getValueRadioCategorie($event)" name="gp1">
+              {{season}}
+          </mat-radio-button>
+ 
     <br>
-        <label>Sélectionner l'Epoque de l'objet</label>
-        <mat-chip-list
-            class="example-chip"
-            cdkDropList 
-            cdkDropListOrientation="horizontal"
-            >
-            <mat-chip
-            class="example-box"
-            cdkDrag
-            *ngFor="let epoque of epoque">
-            {{epoque.name}}
-        </mat-chip>
-    </mat-chip-list>
+
+          <label>
+            Sélectionner l'Epoque de l'objet
+          </label>
+          <mat-radio-button class="example-radio-button" *ngFor="let season of seasons2" [value]="season" (change)="getValueRadioEpoque($event)" name="gp2">
+              {{season}}
+          </mat-radio-button>
+          <!-- <div>LMa saison : {{favoriteSeason}}</div> -->
+
+          <label>
+            Sélectionner l'Epoque de l'objet
+          </label>
+          <mat-radio-button class="example-radio-button" *ngFor="let season of seasons3" [value]="season" (change)="getValueRadioEtat($event)" name="gp3">
+              {{season}}
+          </mat-radio-button>
+        
 
     <br>
 
 
-
-        <input class="description" placeholder="Description">
-        <input class="prix" placeholder="Prix">
+        <input type="text" name="description" formControlName="description" autocomplete="off" class="description" placeholder="Description" maxlength="200"> 
+        <input type="number" name="prix" formControlName="prix" autocomplete="off" class="prix" placeholder="Prix">
     </div>
-    
-    <div align="center">
-    
-    </div>
+    <button type="submit" class="button_ajout_offre">Ajouter Offre</button>
 </form>
-<button type="submit">Ajouter Offre</button>

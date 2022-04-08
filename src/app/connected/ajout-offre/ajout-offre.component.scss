@@ -49,6 +49,14 @@ form .inputs {
     outline:none;
     margin-bottom: 15px;
 }
+.Article{
+  padding: 15px;
+  border:none;
+  border-radius: 5px;
+  background-color:#f2f2f2;
+  outline:none;
+  margin-bottom: 15px;
+}
 
 .description{
     padding: 15px;
@@ -68,7 +76,7 @@ form .inputs {
     margin-bottom: 15px;
 }
 
-button{
+.button_ajout_offre{
   padding: 15px 25px;
   border-radius: 5px;
   border:none;

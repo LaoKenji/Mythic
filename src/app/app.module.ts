@@ -13,6 +13,7 @@ import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/c
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {  MatTableModule } from '@angular/material/table';
 import {ReactiveFormsModule } from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
 import { BlocRechercheComponent } from './bloc-recherche/bloc-recherche.component';
@@ -61,7 +62,8 @@ import { AccueilConnectComponent } from './connected/accueil_connect/accueil_con
     MatPaginatorModule,
     MatTableModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    MatRadioModule
 
   ],
 

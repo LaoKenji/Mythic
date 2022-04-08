@@ -19,4 +19,7 @@ export class PanierComponent implements OnInit {
     const index = this.items.indexOf(p);
     this.items.splice(index, 1);
   }
+
+  
+
 }
