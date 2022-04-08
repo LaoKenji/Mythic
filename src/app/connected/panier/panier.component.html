@@ -9,9 +9,9 @@
     <td>{{mydata.libelle_article}}</td>
     <td>{{mydata.etat}}</td>
     <td>{{mydata.prix}}</td>
-    <td><button (click)="deleteRow(mydata)">Enlever du panier</button></td>
+    <td><button (click)="valueChange(mydata.prix)" (click)="deleteRow(mydata)" >Enlever du panier</button></td>
   </tr>
-</table>
+</table> 
 
 <!-- <table>
   <tr *ngFor="let mydata of data[0]">

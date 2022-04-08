@@ -111,7 +111,6 @@ export class PageListeProduitComponent implements OnInit {
       prix : this.produit.prix
     };
     this.api.addToCart(product);
-    window.alert('Le produit a été ajouté au panier');
     console.log(product);
   }
 
