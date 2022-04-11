@@ -8,12 +8,12 @@ import { Router } from '@angular/router';
 })
 export class NavBarConnectComponent implements OnInit {
 
-  constructor(public router : Router) { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
 
-  goToPage(pageName : string):void {
+  goToPage(pageName: string): void {
     this.router.navigate([`${pageName}`])
   }
 

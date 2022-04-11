@@ -13,8 +13,8 @@ export class PanierComponent implements OnInit {
 
   items = this.api.getItems();
   totalPrice = 0;
-  constructor(private api : PanierService,
-    private http: HttpClient) {}
+  constructor(private api: PanierService,
+    private http: HttpClient) { }
 
 
   ngOnInit(): void {
@@ -25,24 +25,24 @@ export class PanierComponent implements OnInit {
     this.getTotalPrice();
   }
 
-  deleteRow(p: any){
+  deleteRow(p: any) {
     const index = this.items.indexOf(p);
     this.items.splice(index, 1);
   }
-  
+
   clearCart() {
     this.api.clearCart();
   }
 
 
-  getTotalPrice () {
+  getTotalPrice() {
     let sum: number = 0;
     this.items.forEach(a => sum += +a.prix);
     this.totalPrice = +sum.toFixed(2);
-    
+
   }
 
-  valueChange(p : any) {
+  valueChange(p: any) {
     this.totalPrice = this.totalPrice - p;
     this.totalPrice = +this.totalPrice.toFixed(2);
     console.log(this.totalPrice);

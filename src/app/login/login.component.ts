@@ -7,26 +7,26 @@ import { getMatFormFieldPlaceholderConflictError } from '@angular/material/form-
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-selector: 'app-login',
-templateUrl: './login.component.html',
-styleUrls: ['./login.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-    angForm: FormGroup;
-    postId: any;
-    baseUrl = 'http://localhost/api/';
+  angForm: FormGroup;
+  postId: any;
+  baseUrl = 'http://localhost/api/';
 
 
-    recup!: string;
+  recup!: string;
 
-    redirection!: number;
+  redirection!: number;
 
-    constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private dataService: ApiService, private router: Router, private http: HttpClient) {
     this.angForm = this.fb.group({
-    email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
-    mdp: ['', Validators.required]
+      email: ['', [Validators.required, Validators.minLength(1), Validators.email]],
+      mdp: ['', Validators.required]
     });
-    
+
   }
 
   ngOnInit() {
@@ -38,30 +38,29 @@ export class LoginComponent implements OnInit {
 
 
 
-    getdata(angForm: { value: { email: any; mdp: any; }; })
-    {
-       console.log('valeurs', JSON.stringify(angForm.value));
-         
-      this.http.get<any>('http://localhost/login.php?email='+angForm.value.email+'&mdp='+angForm.value.mdp,{})
+  getdata(angForm: { value: { email: any; mdp: any; }; }) {
+    console.log('valeurs', JSON.stringify(angForm.value));
+
+    this.http.get<any>('http://localhost/login.php?email=' + angForm.value.email + '&mdp=' + angForm.value.mdp, {})
       .subscribe(data => {
         this.recup = data['nb']; // Permet de récupéré le nb de data dans le php 
         console.log(typeof data); // Permet de voir le type de l'élément 
-        console.log(this.recup);       
+        console.log(this.recup);
 
         this.redirection = parseInt(this.recup);
-        if(this.redirection == 1){
+        if (this.redirection == 1) {
           this.goToPage('acceuil-connect')
         }
-        else{
+        else {
           alert("Mauvais mot de passe ou email !")
         }
-      },error => console.error(error));
-       
-    }
-    
-  goToPage(pageName : string):void {
+      }, error => console.error(error));
+
+  }
+
+  goToPage(pageName: string): void {
     this.router.navigate([`${pageName}`])
   }
 
-    
-  };
+
+};

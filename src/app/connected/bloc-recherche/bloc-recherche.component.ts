@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-bloc-recherche',
-  templateUrl:'./bloc-recherche.component.html',
+  templateUrl: './bloc-recherche.component.html',
   styleUrls: ['./bloc-recherche.component.scss']
 })
 export class BlocRechercheComponent implements OnInit {
@@ -17,4 +17,4 @@ export class BlocRechercheComponent implements OnInit {
  * @title Basic menu
  */
 
-export class MenuOverviewExample {}
+export class MenuOverviewExample { }

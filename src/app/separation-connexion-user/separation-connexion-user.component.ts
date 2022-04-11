@@ -8,12 +8,12 @@ import { Router } from '@angular/router';
 })
 export class SeparationConnexionUserComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  goToPage(pageName : string):void {
+  goToPage(pageName: string): void {
     this.router.navigate([`${pageName}`])
   }
 

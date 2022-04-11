@@ -25,25 +25,25 @@ import { AuthguardGuard } from './auth.guard';
 
 
 const routes: Routes = [
-  {path: "accueil" , component: AccueilComponent },
-  {path: "ajout_offre" , component: AjoutOffreComponent },
-  {path: "connexion" , component: SeparationConnexionUserComponent },
-  {path: "inscription" , component: SeparationInscriptionUserComponent },
-  {path: "pagelisteproduit", component: PageListeProduitComponent},
-  {path: "pagelisteproduit/:id/:libelle_article/:etat/:prix", component: PageListeProduitComponent},
-  {path: "panier", component: PanierComponent},
-  {path: "footer", component: FooterComponent},
-  {path: "inscription-part", component: InscriptionUserComponent},
-  {path: "inscription-pro", component: InscriptionProComponent},
-  {path: "connexion-pro", component: ConnexionProComponent},
+  { path: "accueil", component: AccueilComponent },
+  { path: "ajout_offre", component: AjoutOffreComponent },
+  { path: "connexion", component: SeparationConnexionUserComponent },
+  { path: "inscription", component: SeparationInscriptionUserComponent },
+  { path: "pagelisteproduit", component: PageListeProduitComponent },
+  { path: "pagelisteproduit/:id/:libelle_article/:etat/:prix", component: PageListeProduitComponent },
+  { path: "panier", component: PanierComponent },
+  { path: "footer", component: FooterComponent },
+  { path: "inscription-part", component: InscriptionUserComponent },
+  { path: "inscription-pro", component: InscriptionProComponent },
+  { path: "connexion-pro", component: ConnexionProComponent },
   /*{path: "profil-part", component: ProfilPartComponent},
   {path: "profil-pro", component: ProfilProComponent}*/
-  
+
   { path: "acceuil-connect", component: AccueilConnectComponent },
   { path: "connexion-part", component: LoginComponent },
 
 
-  {path: '**', redirectTo: 'accueil'},
+  { path: '**', redirectTo: 'accueil' },
 ];
 
 @NgModule({
