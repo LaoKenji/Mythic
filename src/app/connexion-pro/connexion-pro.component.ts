@@ -29,14 +29,9 @@ export class ConnexionProComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
   get email() { return this.angForm.get('email'); }
   get mdp() { return this.angForm.get('mdp'); }
-
-
-
 
   getdata(angForm: { value: { email: any; mdp: any; }; }) {
     console.log('valeurs', JSON.stringify(angForm.value));

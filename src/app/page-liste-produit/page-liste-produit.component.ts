@@ -11,7 +11,7 @@ import { PanierService } from '../panier.service';
 })
 export class PageListeProduitComponent implements OnInit {
 
-  isSelected = false;
+  isSelected = false; //Booleén qui va afficher certaines valeurs
   path = "";
   message = "";
 
@@ -53,15 +53,12 @@ export class PageListeProduitComponent implements OnInit {
       this.produit.prix = params.get('prix');
     });
     this.isSelectedPage();
-    console.log(this.data.id_img)
   }
 
 
   navigateTo(row: any) {
     this.router.navigate(['/maintenance/data/' + row.id]);
   }
-
-
 
   categorie: Categorie[] = [
     { name: 'Armes' },
@@ -87,14 +84,13 @@ export class PageListeProduitComponent implements OnInit {
 
   selected() {
     this.isSelected = true;
-    console.log(this.isSelected);
   }
 
   notSelected() {
     this.isSelected = false;
-    console.log(this.isSelected);
   }
 
+  //Vérifie si l'url contient "" et affiche le contenu selon l'url
   isSelectedPage() {
     if (this.router.url === '/pagelisteproduit/:id/:libelle_article/:etat/:prix') {
       this.isSelected = false;
@@ -102,7 +98,8 @@ export class PageListeProduitComponent implements OnInit {
       this.isSelected = true;
     }
   }
-
+  
+  //Ajouter un produit dans le panier
   addToCart(product: Produit) {
     product = {
       id_img: this.produit.id_img,
@@ -111,7 +108,6 @@ export class PageListeProduitComponent implements OnInit {
       prix: this.produit.prix
     };
     this.api.addToCart(product);
-    console.log(product);
   }
 
 }

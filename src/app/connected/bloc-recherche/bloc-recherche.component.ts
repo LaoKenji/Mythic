@@ -13,8 +13,3 @@ export class BlocRechercheComponent implements OnInit {
   }
 }
 
-/**
- * @title Basic menu
- */
-
-export class MenuOverviewExample { }

@@ -15,10 +15,7 @@ export class LoginComponent implements OnInit {
   angForm: FormGroup;
   postId: any;
   baseUrl = 'http://localhost/api/';
-
-
   recup!: string;
-
   redirection!: number;
 
   constructor(private fb: FormBuilder, private dataService: ApiService, private router: Router, private http: HttpClient) {
@@ -29,14 +26,9 @@ export class LoginComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
   get email() { return this.angForm.get('email'); }
   get mdp() { return this.angForm.get('mdp'); }
-
-
-
 
   getdata(angForm: { value: { email: any; mdp: any; }; }) {
     console.log('valeurs', JSON.stringify(angForm.value));

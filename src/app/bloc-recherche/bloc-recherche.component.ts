@@ -12,9 +12,3 @@ export class BlocRechercheComponent implements OnInit {
   ngOnInit(): void {
   }
 }
-
-/**
- * @title Basic menu
- */
-
-export class MenuOverviewExample { }

@@ -13,6 +13,7 @@ export class SeparationInscriptionUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Navigue vers la page
   goToPage(pageName: string): void {
     this.router.navigate([`${pageName}`])
   }

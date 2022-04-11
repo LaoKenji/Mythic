@@ -17,8 +17,6 @@ export class AppComponent {
   logoutbtn: boolean;
   name: any;
 
-
-
   constructor(private http: HttpClient, private dataService: ApiService) {
     /* this.http.get('http://localhost/create_user.php').subscribe(data => {
     this.data.push(data);
@@ -44,11 +42,13 @@ export class AppComponent {
     this.logoutbtn = name;
     this.loginbtn = !name;
   }
+
   logout() {
     this.dataService.deleteToken();
     window.location.href = window.location.href;
   }
 
+  //Navigue vers la page
   goToPage(pageName: string): void {
     this.router.navigate([`${pageName}`])
   }
