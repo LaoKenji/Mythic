@@ -125,7 +125,7 @@ export class AjoutOffreComponent implements OnInit {
        this.postId = data;
        console.log(this.postId);
      }, (error: any) => console.error(error));
-     alert("Votre Produit à était ajouter !");
+     alert("Votre Produit a été ajouter !");
  }
  
 
