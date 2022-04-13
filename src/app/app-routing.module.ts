@@ -21,7 +21,6 @@ import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 
 
 import { LoginComponent } from './login/login.component';
-import { AuthguardGuard } from './auth.guard';
 
 
 const routes: Routes = [
