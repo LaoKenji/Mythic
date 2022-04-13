@@ -32,6 +32,7 @@ export class ConnexionProComponent implements OnInit {
   ngOnInit() {
 
   }
+  //recup les infos du formulaire
   get email() { return this.angForm.get('email'); }
   get mdp() { return this.angForm.get('mdp'); }
 
@@ -42,7 +43,7 @@ export class ConnexionProComponent implements OnInit {
     {
        console.log('valeurs', JSON.stringify(angForm.value));
          
-      this.http.get<any>('http://localhost/connexion_pro.php?email='+angForm.value.email+'&mdp='+angForm.value.mdp,{})
+      this.http.get<any>('http://localhost/connexion_pro.php?email='+angForm.value.email+'&mdp='+angForm.value.mdp,{}) // Envoie Info au php
       .subscribe(data => {
         this.recup = data['nb']; // Permet de récupéré le nb de data dans le php 
         console.log(typeof data); // Permet de voir le type de l'élément 

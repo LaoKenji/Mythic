@@ -16,6 +16,7 @@ export class InscriptionProComponent implements OnInit {
   constructor(private router : Router, private http: HttpClient) { }
   
   public user_pro: User_pro = new User_pro();
+  
   ngOnInit() {
     this.http.post<any>('https://reqres.in/api/posts', { title: 'Angular POST Request Example' }).subscribe(data => {
         this.postId = data.id;

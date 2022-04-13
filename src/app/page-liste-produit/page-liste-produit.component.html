@@ -1,72 +1,63 @@
 <app-bloc-recherche *ngIf="!isSelected"></app-bloc-recherche>
 
-<!--Filtre-->
+<!---------------Filtre--------------->
+
 <div class="Filtre" *ngIf="!isSelected">
-    <!--Filtre pro/part -->
-    <h2>Annonces: </h2>
-    <ul>
-      <li>
-        <label class="container_check">Professionnels
+
+  <!--Filtre pro/part -->
+  <h2>Annonces: </h2>
+  <ul>
+    <li>
+      <label class="container_check">Professionnels
         <input type="checkbox">
         <span class="checkmark"></span>
       </label>
-      </li>
-      <li>
-        <label class="container_check">Particuliers
+    </li>
+    <li>
+      <label class="container_check">Particuliers
         <input type="checkbox">
         <span class="checkmark"></span>
       </label>
-      </li>
-    </ul>
+    </li>
+  </ul>
 
-    <!--Filtre objets-->
-    <label>Sélectionner l'Epoque de l'objet</label>
-    <br><br>
-    <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
-      <mat-chip class="example-box" cdkDrag *ngFor="let epoque of epoque">
-        {{epoque.name}}
-      </mat-chip>
-    </mat-chip-list>
-
+  <!--Filtre objets-->
+  <label>Sélectionner l'Epoque de l'objet</label>
+  <br><br>
+  <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+    <mat-chip class="example-box" cdkDrag *ngFor="let epoque of epoque">
+      {{epoque.name}}
+    </mat-chip>
+  </mat-chip-list>
 
 </div>
+
 <br>
 
-<!--Liste de tout les produits (faire une boucle While avec JS pour faire apparaitre toute les annonces)-->
-<!-- Exemple à bouger par la suite-->
 <div class="liste_produit" *ngIf="!isSelected">
-    
-      <!-- <table class="tab">
-        <thead>
-          <tr>
-            <td class="img_liste_produit"><img class="img_prod" src="../../assets/ressources/Group 47.png"></td>
-            <td class="categorie_liste_produit"><h3>Catégories</h3><img class="img_categorie"src="../../assets/ressources/Group 27.png"></td>
-            <td class="periode_liste_produit"><h3>Périodes</h3><img class="img_periode" src="../../assets/ressources/Group 44.png"></td>
-            <td class="description_liste_produit"><h3>Description</h3><p>Armure datant de l’époque du Moyen-Age, servie qu’une fois.</p></td>
-            <td class="prix_liste_produit"><h3>Prix</h3></td>
-          </tr>
-        </thead>
-      </table> -->
-      
-      <table>
-          <tr>
-            <th>#</th>
-            <th>Article</th>
-            <th>Etat</th>
-            <th>Prix</th>
-            <th></th>
-          </tr>
-          <tr *ngFor="let mydata of data[0]">
-            <td><img src="http://localhost/export.php?id={{mydata.id_article}}"></td>
-            <td>{{mydata.libelle_article}}</td>
-            <td>{{mydata.etat}}</td>
-            <td>{{mydata.prix}}</td>
-            <td><a routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}"><button (click)="selected()">Voir article</button></a></td>
-          </tr>
-      </table>
+
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Article</th>
+      <th>Etat</th>
+      <th>Prix</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let mydata of data[0]">
+      <td><img src="http://localhost/export.php?id={{mydata.id_article}}"></td>
+      <td>{{mydata.libelle_article}}</td>
+      <td>{{mydata.etat}}</td>
+      <td>{{mydata.prix}}</td>
+      <td><a
+          routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}"><button
+            (click)="selected()">Voir article</button></a></td>
+    </tr>
+  </table>
 </div>
 <div>
-  <!-- <img src="http://localhost/export.php?id=3"> --> <!-- Pour appeller l'image -->
+  <!-- Pour appeller l'image <img src="http://localhost/export.php?id=3">-->
+  
   <table *ngIf="isSelected">
     <tr>
       <td></td>
@@ -74,9 +65,10 @@
       <td>Article: {{produit.libelle_article}}</td>
       <td>Etat: {{produit.etat}}</td>
       <td>Prix: {{produit.prix}}</td>
-      <td><a routerLink="/pagelisteproduit/:id/:libelle_article/:etat/:prix"><button (click)="notSelected()">Retour</button></a></td>
+      <td><a routerLink="/pagelisteproduit/:id/:libelle_article/:etat/:prix"><button
+            (click)="notSelected()">Retour</button></a></td>
       <td><button (click)="addToCart(produit)">Ajouter au panier</button></td>
     </tr>
   </table>
-  
+
 </div>

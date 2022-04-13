@@ -6,7 +6,6 @@
 
 
   <div class="inputs">
-    <!-- <input class="ajout_img" placeholder="Déposer votre Image" type="file"/> -->
     <input type="text" name="nom_article" formControlName="nom_article" autocomplete="off" class="nom_article"
     placeholder="Nom Article"><br>
 
@@ -28,14 +27,13 @@
       (change)="getValueRadioEpoque($event)" name="gp2">
       {{season}}
     </mat-radio-button>
-    <!-- <div>LMa saison : {{favoriteSeason}}</div> -->
 
     <label>
       Sélectionner l'Epoque de l'objet
     </label>
-    <mat-radio-button class="example-radio-button" *ngFor="let season of seasons3" [value]="season"
+    <mat-radio-button class="example-radio-button" *ngFor="let etat_obj of seasons3" [value]="etat_obj"
       (change)="getValueRadioEtat($event)" name="gp3">
-      {{season}}
+      {{etat_obj}}
     </mat-radio-button>
 
 

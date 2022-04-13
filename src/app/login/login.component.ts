@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
   }
+  // Récupére infos formulaire 
   get email() { return this.angForm.get('email'); }
   get mdp() { return this.angForm.get('mdp'); }
 
