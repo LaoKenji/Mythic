@@ -1,9 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, SimpleChange } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { PanierService } from 'src/app/panier.service';
-import { Produit } from 'src/app/produit';
-
 @Component({
   selector: 'app-panier',
   templateUrl: './panier.component.html',
@@ -11,11 +7,9 @@ import { Produit } from 'src/app/produit';
 })
 export class PanierComponent implements OnInit {
 
-  items = this.api.getItems();
+  items = this.api.getItems();//Récupère les données du service c'est à dire les articles
   totalPrice = 0;//Prix du panier si panier vide
-  constructor(private api: PanierService,
-    private http: HttpClient) { }
-
+  constructor(private api: PanierService) { }
 
   ngOnInit(): void {
     this.getTotalPrice();
@@ -27,16 +21,16 @@ export class PanierComponent implements OnInit {
     this.items.splice(index, 1);
   }
 
+  //Supprimer tous les articles
   clearCart() {
-    this.api.clearCart();
+    this.items = this.api.clearCart();
   }
 
   //Fonction pour avoir le prix total du panier
   getTotalPrice() {
     let sum: number = 0;
-    this.items.forEach(a => sum += +a.prix);
+    this.items.forEach(a => sum += +a.prix);//Ajoute le prix de chaques produits dans le panier
     this.totalPrice = +sum.toFixed(2); //toFixed(2) sert à arrondir le prix au centième
-
   }
 
   //Fonction pour mettre à jour le prix du panier quand on enlève un produit

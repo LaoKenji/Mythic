@@ -3,26 +3,26 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivate, Rout
 import { ApiService } from './api.service';
 
 @Injectable({
-providedIn: 'root'
+    providedIn: 'root'
 })
 
 export class AuthguardGuard implements CanActivate {
-constructor(private dataService: ApiService,private router: Router ) {}
+    constructor(private dataService: ApiService, private router: Router) { }
 
-canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{
-    const routeurl = state.url;
-    return newFunction();
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+        const routeurl = state.url;
+        return newFunction();
 
-    function newFunction(this: any): boolean {
-        return this.isLogin(routeurl);
+        function newFunction(this: any): boolean {
+            return this.isLogin(routeurl);
+        }
     }
-}
 
-isLogin(routeurl: string) {
-            if (this.dataService.isLoggedIn()) {
-            return true;   
+    isLogin(routeurl: string) {
+        if (this.dataService.isLoggedIn()) {
+            return true;
         }
         this.dataService.redirectUrl = routeurl;
-        this.router.navigate(['/login'], {queryParams: { returnUrl: routeurl }} );
+        this.router.navigate(['/login'], { queryParams: { returnUrl: routeurl } });
     }
 }

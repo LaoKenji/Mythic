@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 
         this.redirection = parseInt(this.recup);
         if (this.redirection == 1) {
-          this.goToPage('acceuil-connect')
+          this.goToPage('accueil-connect')
         }
         else {
           alert("Mauvais mot de passe ou email !")

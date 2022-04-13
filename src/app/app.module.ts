@@ -8,12 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatChipsModule} from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {  MatTableModule } from '@angular/material/table';
-import {ReactiveFormsModule } from '@angular/forms';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { InscriptionUserComponent } from './inscription-user/inscription-user.component';
 import { BlocRechercheComponent } from './bloc-recherche/bloc-recherche.component';
@@ -29,6 +29,7 @@ import { ConnexionProComponent } from './connexion-pro/connexion-pro.component';
 import { LoginComponent } from './login/login.component';
 import { PanierComponent } from './connected/panier/panier.component';
 import { AccueilConnectComponent } from './connected/accueil_connect/accueil_connect.component';
+import { PageListeProduitConnectComponent } from './connected/page-liste-produit-connect/page-liste-produit-connect.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { AccueilConnectComponent } from './connected/accueil_connect/accueil_con
     PanierComponent,
     NavBarConnectComponent,
     AccueilConnectComponent,
+    PageListeProduitConnectComponent
   ],
   imports: [
     BrowserModule,
@@ -63,11 +65,11 @@ import { AccueilConnectComponent } from './connected/accueil_connect/accueil_con
     ReactiveFormsModule,
     CommonModule,
     MatRadioModule,
-    
+
 
   ],
 
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 

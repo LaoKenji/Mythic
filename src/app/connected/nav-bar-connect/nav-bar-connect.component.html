@@ -1,21 +1,25 @@
 <nav>
   <div>
     <ul>
+      <a (click)="goToPage('accueil-connect')">
+        <li>
+          <img src="../../assets/ressources/Vector 18.png">
+        </li>
+        <li class="Titre">
+          <h1>Mythic</h1>
+        </li>
+      </a>
       <li>
-        <img src="../../assets/ressources/Vector 18.png">
-      </li>
-      <li>
-        <h1>Mythic</h1>
-      </li>
-      <li>
-        <button (click)="goToPage('ajout_offre')" class="ajouter_offre"><img
+        <button (click)="goToPage('accueil-connect/ajout_offre')" class="ajouter_offre"><img
             src="../../assets/ressources/Group 32.png">Ajouter Offre</button>
       </li>
       <li class="LogOut">
-        <button class="btn_LogOut">Log Out</button>
+        <button (click)="goToPage('accueil')" class="btn_LogOut">Log Out</button>
       </li>
+    </ul>
+    <ul class="conn_ins">
       <li>
-        <button (click)="goToPage('panier')"><img src="../../assets/ressources/Group 48.png" class="pannier"></button>
+        <button (click)="goToPage('accueil-connect/panier')"><img src="../../assets/ressources/Group 48.png" class="pannier"></button>
       </li>
     </ul>
   </div>

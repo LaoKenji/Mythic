@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from './api.service';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,13 @@ export class AppComponent {
   data = [] as any;
   roles: undefined;
   loggedUser: undefined;
-  router: any;
   loginbtn: boolean;
   logoutbtn: boolean;
   name: any;
+  isConnected1 = false;
 
-  constructor(private http: HttpClient, private dataService: ApiService) {
+  constructor(private http: HttpClient, private dataService: ApiService,
+    private router:Router) {
     /* this.http.get('http://localhost/create_user.php').subscribe(data => {
     this.data.push(data);
     console.log(this.data); 
@@ -35,7 +37,19 @@ export class AppComponent {
       this.loginbtn = true;
       this.logoutbtn = false
     }
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        if (this.router.url.includes('/accueil-connect')) {
+          this.isConnected1 = true;
+        } else {
+          this.isConnected1 = false;
+        }
+      }
+      return;
+    });
+  }
 
+  ngOnInit(): void {
   }
 
   private changeName(name: boolean): void {
@@ -46,11 +60,6 @@ export class AppComponent {
   logout() {
     this.dataService.deleteToken();
     window.location.href = window.location.href;
-  }
-
-  //Navigue vers la page
-  goToPage(pageName: string): void {
-    this.router.navigate([`${pageName}`])
   }
 }
 

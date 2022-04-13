@@ -27,8 +27,15 @@
 
   </div>
 </div>
-<div class="divrecherche">
+<div class="divrecherche" *ngIf="!isConnected">
   <a routerLink="/pagelisteproduit/:id/:libelle_article/:etat/:prix">
+    <div class="dans_divrecherche">
+      <img src="../../assets/ressources/Group 49.png"><label>Recherche</label>
+    </div>
+  </a>
+</div>
+<div class="divrecherche" *ngIf="isConnected">
+  <a routerLink="/accueil-connect/pagelisteproduit/:id/:libelle_article/:etat/:prix">
     <div class="dans_divrecherche">
       <img src="../../assets/ressources/Group 49.png"><label>Recherche</label>
     </div>
