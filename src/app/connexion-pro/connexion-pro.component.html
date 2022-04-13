@@ -22,6 +22,7 @@
 </div> -->
 <br><br><br><br><br><br>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,24 +31,26 @@
 </head>
 
 <form [formGroup]="angForm" (ngSubmit)="getdata(angForm)" autocomplete="off">
-        
+
   <h1>Connexion Particulier</h1>
   <div class="social-media">
-  <p><i class="fab fa-google"></i></p>
-  <p><i class="fab fa-instagram"></i></p>
-  <p><i class="fab fa-facebook-f"></i></p>
-  <p><i class="fab fa-twitter"></i></p>
+    <p><i class="fab fa-google"></i></p>
+    <p><i class="fab fa-instagram"></i></p>
+    <p><i class="fab fa-facebook-f"></i></p>
+    <p><i class="fab fa-twitter"></i></p>
   </div>
   <p class="choose-email">ou utiliser mon adresse e-mail :</p>
-  
+
   <div class="inputs">
-        <input type="email" name="email" formControlName="email" autocomplete="off" class="form-control input-sm" placeholder="Email"> 
-        <input type="password" name="mdp" formControlName="mdp" autocomplete="off" class="form-control input-sm" placeholder="Password">
+    <input type="email" name="email" formControlName="email" autocomplete="off" class="form-control input-sm"
+      placeholder="Email">
+    <input type="password" name="mdp" formControlName="mdp" autocomplete="off" class="form-control input-sm"
+      placeholder="Password">
 
   </div>
-    <p class="inscription">Je n'ai pas de compte. Je me <a (click)="goToPage('inscription')"><span>crée</span></a> un compte.</p>
-    <div align="center">
-      <button type="submit" value="log in">Se connecter</button>
-    </div>
-  </form>
-  
+  <p class="inscription">Je n'ai pas de compte. Je me <a (click)="goToPage('inscription')"><span>crée</span></a> un
+    compte.</p>
+  <div align="center">
+    <button type="submit" value="log in">Se connecter</button>
+  </div>
+</form>

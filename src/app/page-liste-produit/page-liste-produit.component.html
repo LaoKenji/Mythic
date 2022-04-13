@@ -1,9 +1,7 @@
 <app-bloc-recherche *ngIf="!isSelected"></app-bloc-recherche>
 
-<!---------------Filtre--------------->
-
+<!--Filtre-->
 <div class="Filtre" *ngIf="!isSelected">
-
   <!--Filtre pro/part -->
   <h2>Annonces: </h2>
   <ul>
@@ -30,11 +28,25 @@
     </mat-chip>
   </mat-chip-list>
 
-</div>
 
+</div>
 <br>
 
+<!--Liste de tout les produits (faire une boucle While avec JS pour faire apparaitre toute les annonces)-->
+<!-- Exemple à bouger par la suite-->
 <div class="liste_produit" *ngIf="!isSelected">
+
+  <!-- <table class="tab">
+        <thead>
+          <tr>
+            <td class="img_liste_produit"><img class="img_prod" src="../../assets/ressources/Group 47.png"></td>
+            <td class="categorie_liste_produit"><h3>Catégories</h3><img class="img_categorie"src="../../assets/ressources/Group 27.png"></td>
+            <td class="periode_liste_produit"><h3>Périodes</h3><img class="img_periode" src="../../assets/ressources/Group 44.png"></td>
+            <td class="description_liste_produit"><h3>Description</h3><p>Armure datant de l’époque du Moyen-Age, servie qu’une fois.</p></td>
+            <td class="prix_liste_produit"><h3>Prix</h3></td>
+          </tr>
+        </thead>
+      </table> -->
 
   <table>
     <tr>
@@ -56,8 +68,8 @@
   </table>
 </div>
 <div>
-  <!-- Pour appeller l'image <img src="http://localhost/export.php?id=3">-->
-  
+  <!-- <img src="http://localhost/export.php?id=3"> -->
+  <!-- Pour appeller l'image -->
   <table *ngIf="isSelected">
     <tr>
       <td></td>

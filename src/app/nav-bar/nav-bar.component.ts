@@ -7,9 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  constructor(public router : Router) { }
+  constructor(public router: Router) { }
 
-  goToPage(pageName : string):void {
+  goToPage(pageName: string): void {
     this.router.navigate([`${pageName}`])
   }
 

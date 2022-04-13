@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-connect',
   templateUrl: 'accueil_connect.component.html',

@@ -8,11 +8,11 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class ApiService {
-    redirectUrl!: string;  
-    baseUrl:string = "http://localhost/";
+    redirectUrl!: string;
+    baseUrl: string = "http://localhost/";
     @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 
-    constructor(private httpClient : HttpClient) { }
+    constructor(private httpClient: HttpClient) { }
 
     public userlogin(email: any, mdp: any) {
         return this.httpClient.post<any>(this.baseUrl + '/login.php', { email, mdp }).pipe(map(Users => {
@@ -22,11 +22,11 @@ export class ApiService {
         }));
     }
 
-    public userregistration(name: any,email: any,pwd: any) {
-        return this.httpClient.post<any>(this.baseUrl + '/register.php', { name,email, pwd })
-        .pipe(map(Users => {
-            return Users;
-        }));
+    public userregistration(name: any, email: any, pwd: any) {
+        return this.httpClient.post<any>(this.baseUrl + '/register.php', { name, email, pwd })
+            .pipe(map(Users => {
+                return Users;
+            }));
     }
 
     //token
@@ -42,8 +42,8 @@ export class ApiService {
     isLoggedIn() {
         const usertoken = this.getToken();
         if (usertoken != null) {
-        return true
-    }
+            return true
+        }
         return false;
     }
 }

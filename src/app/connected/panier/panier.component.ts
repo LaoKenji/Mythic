@@ -12,39 +12,36 @@ import { Produit } from 'src/app/produit';
 export class PanierComponent implements OnInit {
 
   items = this.api.getItems();
-  totalPrice = 0;
-  constructor(private api : PanierService,
-    private http: HttpClient) {}
+  totalPrice = 0;//Prix du panier si panier vide
+  constructor(private api: PanierService,
+    private http: HttpClient) { }
 
 
   ngOnInit(): void {
-    // this.http.get('http://localhost/panier.php').subscribe(data => {
-    // this.data.push(data);
-    // console.log(this.data);
-    // }, error => console.error(error));
     this.getTotalPrice();
   }
-
-  deleteRow(p: any){
+  
+  //Fonction pour supprimer une ligne dans le panier
+  deleteRow(p: any) {
     const index = this.items.indexOf(p);
     this.items.splice(index, 1);
   }
-  
+
   clearCart() {
     this.api.clearCart();
   }
 
-
-  getTotalPrice () {
+  //Fonction pour avoir le prix total du panier
+  getTotalPrice() {
     let sum: number = 0;
     this.items.forEach(a => sum += +a.prix);
-    this.totalPrice = +sum.toFixed(2);
-    
+    this.totalPrice = +sum.toFixed(2); //toFixed(2) sert à arrondir le prix au centième
+
   }
 
-  valueChange(p : any) {
+  //Fonction pour mettre à jour le prix du panier quand on enlève un produit
+  valueChange(p: any) {
     this.totalPrice = this.totalPrice - p;
     this.totalPrice = +this.totalPrice.toFixed(2);
-    console.log(this.totalPrice);
   }
 } 

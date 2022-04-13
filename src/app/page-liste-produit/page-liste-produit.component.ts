@@ -10,26 +10,26 @@ import { PanierService } from '../panier.service';
   styleUrls: ['./page-liste-produit.component.scss']
 })
 export class PageListeProduitComponent implements OnInit {
-  
-  isSelected = false;
+
+  isSelected = false; //Booleén qui va afficher certaines valeurs
   path = "";
   message = "";
 
-  public produit = {  
-    id_img: "" as any,   
-    libelle_article: "" as any,   
+  public produit = {
+    id_img: "" as any,
+    libelle_article: "" as any,
     etat: "" as any,
-    prix: "" as any  
+    prix: "" as any
   };
 
   data = [] as any;
   constructor(private http: HttpClient,
-    private router : Router,
-    private route : ActivatedRoute,
-    private api : PanierService) {
+    private router: Router,
+    private route: ActivatedRoute,
+    private api: PanierService) {
     this.http.get('http://localhost/article.php').subscribe(data => {
-    this.data.push(data);
-    console.log(this.data);
+      this.data.push(data);
+      console.log(this.data);
     }, error => console.error(error));
 
     this.router.events.subscribe((evt) => {
@@ -42,59 +42,55 @@ export class PageListeProduitComponent implements OnInit {
         }
       }
       return;
-  });
+    });
   }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params : ParamMap)=> {  
-      this.produit.id_img=params.get('id');
-      this.produit.libelle_article=params.get('libelle_article');
-      this.produit.etat=params.get('etat');
-      this.produit.prix=params.get('prix');
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.produit.id_img = params.get('id');
+      this.produit.libelle_article = params.get('libelle_article');
+      this.produit.etat = params.get('etat');
+      this.produit.prix = params.get('prix');
     });
     this.isSelectedPage();
-    console.log(this.data.id_img)
   }
 
 
   navigateTo(row: any) {
-    this.router.navigate(['/maintenance/data/'+row.id]);
-  } 
-
-
+    this.router.navigate(['/maintenance/data/' + row.id]);
+  }
 
   categorie: Categorie[] = [
-    {name: 'Armes'},
-    {name: 'Vaisselles'},
-    {name: 'Meubles'},
-    {name: 'Armures'},
-    {name: 'Décoration'},
-    {name: 'Peinture'},
-    {name: 'Sculpture'},
-    {name: 'Divers'},
+    { name: 'Armes' },
+    { name: 'Vaisselles' },
+    { name: 'Meubles' },
+    { name: 'Armures' },
+    { name: 'Décoration' },
+    { name: 'Peinture' },
+    { name: 'Sculpture' },
+    { name: 'Divers' },
   ];
   epoque: Epoque[] = [
-    {name: 'Antiquité'},
-    {name: 'Moyen-Age'},
-    {name: 'Rennaissance'},
-    {name: 'Epoque Moderne'},
+    { name: 'Antiquité' },
+    { name: 'Moyen-Age' },
+    { name: 'Rennaissance' },
+    { name: 'Epoque Moderne' },
   ];
 
-  drop(event: CdkDragDrop<Categorie[], Epoque[] >) {
+  drop(event: CdkDragDrop<Categorie[], Epoque[]>) {
     moveItemInArray(this.categorie, event.previousIndex, event.currentIndex);
     moveItemInArray(this.epoque, event.previousIndex, event.currentIndex);
   }
 
   selected() {
     this.isSelected = true;
-    console.log(this.isSelected);
   }
 
-  notSelected () {
+  notSelected() {
     this.isSelected = false;
-    console.log(this.isSelected);
   }
 
+  //Vérifie si l'url contient "" et affiche le contenu selon l'url
   isSelectedPage() {
     if (this.router.url === '/pagelisteproduit/:id/:libelle_article/:etat/:prix') {
       this.isSelected = false;
@@ -102,16 +98,16 @@ export class PageListeProduitComponent implements OnInit {
       this.isSelected = true;
     }
   }
-
+  
+  //Ajouter un produit dans le panier
   addToCart(product: Produit) {
     product = {
-      id_img : this.produit.id_img,
-      libelle_article : this.produit.libelle_article,
-      etat : this.produit.etat,
-      prix : this.produit.prix
+      id_img: this.produit.id_img,
+      libelle_article: this.produit.libelle_article,
+      etat: this.produit.etat,
+      prix: this.produit.prix
     };
     this.api.addToCart(product);
-    console.log(product);
   }
 
 }
