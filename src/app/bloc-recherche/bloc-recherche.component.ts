@@ -26,7 +26,7 @@ export class BlocRechercheComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
-        if (this.router.url.includes('/accueil-connect/pagelisteproduit/:id/:libelle_article/:etat/:prix')) {
+        if (this.router.url.includes('/accueil-connect')) {
           this.isConnected = true;
         } else {
           this.isConnected = false;

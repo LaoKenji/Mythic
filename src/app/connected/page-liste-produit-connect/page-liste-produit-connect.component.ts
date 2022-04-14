@@ -17,7 +17,10 @@ export class PageListeProduitConnectComponent implements OnInit {
 
   public produit = {
     id_img: "" as any,
+    categorie: "" as any,
+    epoque: "" as any,
     libelle_article: "" as any,
+    description: "" as any,
     etat: "" as any,
     prix: "" as any
   };
@@ -32,27 +35,19 @@ export class PageListeProduitConnectComponent implements OnInit {
       console.log(this.data);
     }, error => console.error(error));
 
-    this.router.events.subscribe((evt) => {
-      if (!(evt instanceof NavigationEnd)) {
-        if (this.router.url !== '/accueil-connect/pagelisteproduit/:id/:libelle_article/:etat/:prix') {
-          this.isSelected = true;
-        }
-        if (this.router.url === '/accueil-connect/pagelisteproduit/:id/:libelle_article/:etat/:prix') {
-          this.isSelected = false;
-        }
-      }
-      return;
-    });
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.produit.id_img = params.get('id');
+      this.produit.categorie = params.get('categorie');
+      this.produit.epoque = params.get('epoque');
       this.produit.libelle_article = params.get('libelle_article');
+      this.produit.description = params.get('description');
       this.produit.etat = params.get('etat');
       this.produit.prix = params.get('prix');
     });
-    this.isSelectedPage();
+    console.log(this.isSelected)
   }
 
 
@@ -92,7 +87,7 @@ export class PageListeProduitConnectComponent implements OnInit {
 
   //Vérifie si l'url contient "" et affiche le contenu selon l'url
   isSelectedPage() {
-    if (this.router.url === '/accueil-connect/pagelisteproduit/:id/:libelle_article/:etat/:prix') {
+    if (this.router.url === '/accueil/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix') {
       this.isSelected = false;
     } else {
       this.isSelected = true;
@@ -103,7 +98,10 @@ export class PageListeProduitConnectComponent implements OnInit {
   addToCart(product: Produit) {
     product = {
       id_img: this.produit.id_img,
+      categorie: this.produit.categorie,
+      epoque: this.produit.epoque,
       libelle_article: this.produit.libelle_article,
+      description: this.produit.description,
       etat: this.produit.etat,
       prix: this.produit.prix
     };
