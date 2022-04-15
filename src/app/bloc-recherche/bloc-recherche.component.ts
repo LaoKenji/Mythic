@@ -16,7 +16,7 @@ export class BlocRechercheComponent implements OnInit {
         if (this.router.url.includes('/accueil-connect')) {
           this.isConnected = true;
         } else {
-          this.isConnected = false;
+          this.isConnected = false; 
         }
       }
       return;
@@ -24,21 +24,15 @@ export class BlocRechercheComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.events.subscribe((evt) => {
-      if (!(evt instanceof NavigationEnd)) {
-        if (this.router.url.includes('/accueil-connect')) {
-          this.isConnected = true;
-        } else {
-          this.isConnected = false;
-        }
-      }
-      return;
-    });
-    console.log(this.isConnected)
+    this.un()
   }
 
   un() {
-    this.isConnected = true;
+    if (this.router.url.includes('/accueil-connect')) {
+      this.isConnected = true;
+    } else {
+      this.isConnected = false; 
+    }
   }
 
 }

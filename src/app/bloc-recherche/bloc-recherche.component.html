@@ -35,7 +35,7 @@
   </a>
 </div>
 <div class="divrecherche" *ngIf="isConnected">
-  <a routerLink="/accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix">
+  <a routerLink="/accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix" (click)="un()">
     <div class="dans_divrecherche">
       <img src="../../assets/ressources/Group 49.png"><label>Recherche</label>
     </div>
