@@ -1,3 +1,4 @@
+<meta meta charset=utf-8>
 <app-bloc-recherche *ngIf="!isSelected"></app-bloc-recherche>
 
 <!--Filtre-->
@@ -17,28 +18,30 @@
 <div class="liste_produit" *ngIf="!isSelected">
 
 
-  <div>
-    <div *ngFor="let mydata of data[0]" class="div_art">
-      <div class="image_liste_produit">
-        <img src="http://localhost/export.php?id={{mydata.id_article}}" width="150px">
-      </div>
-      <div class="libelle_liste_produit">
-        {{mydata.libelle_article}}
-      </div>
-      <div class="etat_liste_produit">
-        {{mydata.etat}}
-      </div>
-      <div class="prix_liste_produit">
-        {{mydata.prix}}
-      </div>
-      <div class="div_bouton_voir_article">
-        <a routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}">
-          <button (click)="selected()" class="bouton_voir_article">Voir article</button>
-        </a>
-      </div>
-      <br>
-    </div>
-  </div>
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Catégorie</th>
+      <th>Epoque</th>
+      <th>Article</th>
+      <th>Description</th>
+      <th>Etat</th>
+      <th>Prix</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let mydata of data[0]">
+      <td><img src="http://localhost/export.php?id={{mydata.id_article}}"></td>
+      <td>{{mydata.categorie}}</td>
+      <td>{{mydata.epoque}}</td>
+      <td>{{mydata.libelle_article}}</td>
+      <td>{{mydata.descriptionart}}</td>
+      <td>{{mydata.etat}}</td>
+      <td>{{mydata.prix}}</td>
+      <td><a
+          routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.libelle_article}}/{{mydata.descriptionart}}/{{mydata.etat}}/{{mydata.prix}}"><button
+            (click)="selected()">Voir article</button></a></td>
+    </tr>
+  </table>
 </div>
 <div>
 
@@ -46,12 +49,14 @@
   <!-- Pour appeller l'image -->
   <table *ngIf="isSelected">
     <tr>
-      <td></td>
       <td>Id: {{produit.id_img}}</td>
+      <td>Catégorie {{produit.categorie}}</td>
+      <td>Epoque: {{produit.epoque}}</td>
       <td>Article: {{produit.libelle_article}}</td>
+      <td>Description: {{produit.description}}</td>
       <td>Etat: {{produit.etat}}</td>
       <td>Prix: {{produit.prix}}</td>
-      <td><a routerLink="/pagelisteproduit/:id/:libelle_article/:etat/:prix"><button
+      <td><a routerLink="/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"><button
             (click)="notSelected()">Retour</button></a></td>
     </tr>
   </table>
