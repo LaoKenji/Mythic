@@ -16,33 +16,40 @@
 <!--Liste de tout les produits (faire une boucle While avec JS pour faire apparaitre toute les annonces)-->
 <!-- Exemple à bouger par la suite-->
 <div class="liste_produit" *ngIf="!isSelected">
-
-
-  <table>
-    <tr>
-      <th>#</th>
-      <th>Catégorie</th>
-      <th>Epoque</th>
-      <th>Article</th>
-      <th>Description</th>
-      <th>Etat</th>
-      <th>Prix</th>
-      <th></th>
-    </tr>
-    <tr *ngFor="let mydata of data[0]">
-      <td><img src="http://localhost/export.php?id={{mydata.id_article}}"></td>
-      <td>{{mydata.categorie}}</td>
-      <td>{{mydata.epoque}}</td>
-      <td>{{mydata.libelle_article}}</td>
-      <td>{{mydata.descriptionart}}</td>
-      <td>{{mydata.etat}}</td>
-      <td>{{mydata.prix}}</td>
-      <td><a
-          routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.libelle_article}}/{{mydata.descriptionart}}/{{mydata.etat}}/{{mydata.prix}}"><button
-            (click)="selected()">Voir article</button></a></td>
-    </tr>
-  </table>
+  <div>
+    <div *ngFor="let mydata of data[0]" class="div_art">
+      <div class="image_liste_produit">
+        <img src="http://localhost/export.php?id={{mydata.id_article}}" width="150px">
+      </div>
+      <div class="categorie_liste_produit">
+        {{mydata.categorie}}
+      </div>
+      <div class="epoque_liste_produit">
+        {{mydata.epoque}}
+      </div>
+      <div class="libelle_liste_produit">
+        {{mydata.libelle_article}}
+      </div>
+      <div class="descriptionart_liste_produit">
+        {{mydata.descriptionart}}
+      </div>
+      <div class="etat_liste_produit">
+        {{mydata.etat}}
+      </div>
+      <div class="prix_liste_produit">
+        {{mydata.prix}}
+      </div>
+      <div class="div_bouton_voir_article">
+        <a routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.descriptionart}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}">
+          <button (click)="selected()" class="bouton_voir_article">Voir article</button>
+        </a>
+      </div>
+      <br>
+    </div>
+  </div>
 </div>
+
+
 <div>
 
   <!-- <img src="http://localhost/export.php?id=3"> -->
@@ -60,5 +67,8 @@
             (click)="notSelected()">Retour</button></a></td>
     </tr>
   </table>
+  
 
 </div>
+
+<br><br><br>
