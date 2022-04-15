@@ -1,5 +1,7 @@
+<meta meta charset=utf-8>
 <br><br><br>
-<div class="blocrecherche">
+    <!-- PARTIE POUR LA V2 -->
+<!-- <div class="blocrecherche">
 
   <button mat-button [matMenuTriggerFor]="menu" class="menu">Catégories
     <div class="categorie">
@@ -26,7 +28,7 @@
     </div>
 
   </div>
-</div>
+</div> -->
 <div class="divrecherche" *ngIf="!isConnected">
   <a routerLink="/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix">
     <div class="dans_divrecherche">
@@ -35,7 +37,8 @@
   </a>
 </div>
 <div class="divrecherche" *ngIf="isConnected">
-  <a routerLink="/accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix" (click)="un()">
+  <a routerLink="/accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"
+    (click)="un()">
     <div class="dans_divrecherche">
       <img src="../../assets/ressources/Group 49.png"><label>Recherche</label>
     </div>
