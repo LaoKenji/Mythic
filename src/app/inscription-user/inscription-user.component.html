@@ -1,4 +1,4 @@
-<br><br><br><br><br><br>
+<br><br><br><br>
 
 <head>
   <meta charset="UTF-8">
@@ -10,13 +10,6 @@
 <form (ngSubmit)="SaveData(registerFrom)" #registerFrom="ngForm">
 
   <h1>Inscription Particulier</h1>
-  <div class="social-media">
-    <p><i class="fab fa-google"></i></p>
-    <p><i class="fab fa-instagram"></i></p>
-    <p><i class="fab fa-facebook-f"></i></p>
-    <p><i class="fab fa-twitter"></i></p>
-  </div>
-  <p class="choose-email">ou utiliser mon adresse e-mail :</p>
 
   <div class="inputs">
     <input type="email" placeholder="Email" [(ngModel)]='user_part.email' name='email' id='email' />
@@ -33,9 +26,19 @@
       maxlength="25">
   </div>
 
+  <div class="div_conditions_utilisations">
+    <input type="checkbox" class="input_condition_utilisation"><label>J'accepte de recevoir des pubs sur l'ajout de fonctionalité ou d'offre concernant mes recherches</label>
+  </div>
+  <div class="div_conditions_utilisations">
+    <input type="checkbox" class="input_condition_utilisation"><label>J’accepte les conditions d’utilisations du site</label>
+  </div>
+
+  <br>
+
   <p class="inscription">J'ai un compte. Je me <a (click)="goToPage('connexion')"><span>connecte</span></a> à mon
     compte.</p>
   <div align="center">
     <button type="submit" class="button_pro">S'Inscrire</button>
   </div>
 </form>
+<br><br>

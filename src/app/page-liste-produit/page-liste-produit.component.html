@@ -4,31 +4,11 @@
 <div class="Filtre" *ngIf="!isSelected">
   <!--Filtre pro/part -->
   <h2>Annonces: </h2>
-  <ul>
-    <li>
-      <label class="container_check">Professionnels
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-    </li>
-    <li>
-      <label class="container_check">Particuliers
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-    </li>
-  </ul>
+
+    <input type="checkbox"><label class="container_check">Professionnels</label>
+    <input type="checkbox"><label class="container_check">Particuliers</label>
 
   <!--Filtre objets-->
-  <label>Sélectionner l'Epoque de l'objet</label>
-  <br><br>
-  <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
-    <mat-chip class="example-box" cdkDrag *ngFor="let epoque of epoque">
-      {{epoque.name}}
-    </mat-chip>
-  </mat-chip-list>
-
-
 </div>
 <br>
 
@@ -36,38 +16,32 @@
 <!-- Exemple à bouger par la suite-->
 <div class="liste_produit" *ngIf="!isSelected">
 
-  <!-- <table class="tab">
-        <thead>
-          <tr>
-            <td class="img_liste_produit"><img class="img_prod" src="../../assets/ressources/Group 47.png"></td>
-            <td class="categorie_liste_produit"><h3>Catégories</h3><img class="img_categorie"src="../../assets/ressources/Group 27.png"></td>
-            <td class="periode_liste_produit"><h3>Périodes</h3><img class="img_periode" src="../../assets/ressources/Group 44.png"></td>
-            <td class="description_liste_produit"><h3>Description</h3><p>Armure datant de l’époque du Moyen-Age, servie qu’une fois.</p></td>
-            <td class="prix_liste_produit"><h3>Prix</h3></td>
-          </tr>
-        </thead>
-      </table> -->
 
-  <table>
-    <tr>
-      <th>#</th>
-      <th>Article</th>
-      <th>Etat</th>
-      <th>Prix</th>
-      <th></th>
-    </tr>
-    <tr *ngFor="let mydata of data[0]">
-      <td><img src="http://localhost/export.php?id={{mydata.id_article}}"></td>
-      <td>{{mydata.libelle_article}}</td>
-      <td>{{mydata.etat}}</td>
-      <td>{{mydata.prix}}</td>
-      <td><a
-          routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}"><button
-            (click)="selected()">Voir article</button></a></td>
-    </tr>
-  </table>
+  <div>
+    <div *ngFor="let mydata of data[0]" class="div_art">
+      <div class="image_liste_produit">
+        <img src="http://localhost/export.php?id={{mydata.id_article}}" width="150px">
+      </div>
+      <div class="libelle_liste_produit">
+        {{mydata.libelle_article}}
+      </div>
+      <div class="etat_liste_produit">
+        {{mydata.etat}}
+      </div>
+      <div class="prix_liste_produit">
+        {{mydata.prix}}
+      </div>
+      <div class="div_bouton_voir_article">
+        <a routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}">
+          <button (click)="selected()" class="bouton_voir_article">Voir article</button>
+        </a>
+      </div>
+      <br>
+    </div>
+  </div>
 </div>
 <div>
+
   <!-- <img src="http://localhost/export.php?id=3"> -->
   <!-- Pour appeller l'image -->
   <table *ngIf="isSelected">
