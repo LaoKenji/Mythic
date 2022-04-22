@@ -44,7 +44,7 @@ const routes: Routes = [
   { path: "connexion-part", component: LoginComponent },
 
 
-  { path: '**', redirectTo: 'accueil' },
+  { path: '**', redirectTo: 'pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix' },
 ];
 
 @NgModule({

@@ -2,7 +2,7 @@
 <nav>
   <div>
     <ul>
-      <a (click)="goToPage('accueil-connect')">
+      <a (click)="goToPage('accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix')">
         <li>
           <img src="../../assets/ressources/Vector 18.png">
         </li>
@@ -21,7 +21,7 @@
         <button (click)="goToPage('accueil-connect/panier')" class="btn_panier"><img src="../../assets/ressources/Group 48.png" class="pannier"></button>
       </li>
       <li class="LogOut">
-        <button (click)="goToPage('accueil')" class="btn_LogOut">Déconnexion</button>
+        <button (click)="goToPage('pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix')" class="btn_LogOut">Déconnexion</button>
       </li>
     </ul>
   </div>

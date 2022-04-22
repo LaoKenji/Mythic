@@ -126,7 +126,7 @@ export class AjoutOffreComponent implements OnInit {
         console.log(this.postId);
       }, (error: any) => console.error(error));
     alert("Votre Produit à était ajouter !");
-    this.router.navigate(["/accueil-connect"]);
+    this.router.navigate(["/accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"]);
   }
 
   //Envoie IMG au PHP pour l'enregistrer dans le fichier adéquat
