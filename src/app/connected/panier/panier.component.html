@@ -6,8 +6,9 @@
 
 <table>
   <tr *ngFor="let mydata of items">
-    <td>{{mydata.id_img}}</td>
+    <td><img src="http://localhost/export.php?id={{mydata.id_img}}"></td>
     <td>{{mydata.libelle_article}}</td>
+    <td>{{mydata.description}}</td>
     <td>{{mydata.etat}}</td>
     <td>{{mydata.prix}}</td>
     <td><button (click)="valueChange(mydata.prix)" (click)="deleteRow(mydata)">Enlever du panier</button></td>
