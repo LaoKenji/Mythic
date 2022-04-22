@@ -1,22 +1,20 @@
 .Filtre{
     padding: 5px;
     margin-left: 15%;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 75%;
     background: pink;
 }
 
 .div_art{
-    display: flex;
-    justify-content: center;
     margin-top: 15px;
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width:auto;
+    width: auto;
     background: lawngreen;
+    display: grid;
+    grid-template-columns: 200px 100px 100px 100px 100px 100px 100px 100px;
+    gap: 10px;
     
 }
 .liste_produit{
@@ -26,15 +24,15 @@
 /*     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
-    width: 50%;
+    width: fit-content;
+    margin: auto;
 
     
 }
 .liste_produit table{
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: auto;
-    
+    width: auto;   
 }
 
 .image_liste_produit{
@@ -43,42 +41,71 @@
     justify-content: center;
     border-radius: 5px;
     margin: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 5px;
 }
 .categorie_liste_produit{
     background: purple;
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 15px;
+    width: 150px;
+    height: 150px;
 }
 .epoque_liste_produit{
     background: blue;
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 15px;
+    width: 150px;
+    height: 150px;
+    margin-left: 55px;
 }
 .descriptionart_liste_produit{
     background: maroon;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 15px;
+    margin-left: 55px;
 }
 .libelle_liste_produit{
     background: cyan;
     border-radius: 5px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-top: 5px;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 15px;
+    margin-left: 55px;
 }
 .etat_liste_produit{
     background: red;
     border-radius: 5px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-top: 5px;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-left: 55px;
 }
 .prix_liste_produit{
     background: pink;
     border-radius: 5px;
-    margin-left: 15px;
-    margin-right: 15px;
-}
-.div_bouton_voir_article{
-    transform: translateY(45%);
+    margin-top: 75px;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 45px;
+    width: 125px;
 }
 .bouton_voir_article{
     background: #FFAC4B;
     border-radius: 5px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
+    margin-right: 5px;
+    margin-left: 15px;
+    margin-top: 75px;
 }
 /* unvisited link */
 a:link {

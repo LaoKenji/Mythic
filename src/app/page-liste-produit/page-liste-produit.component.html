@@ -3,9 +3,7 @@
 
 <!--Filtre-->
 <div class="Filtre" *ngIf="!isSelected">
-  <!--Filtre pro/part -->
-  <h2>Annonces: </h2>
-
+    <label>Annonces: </label>
     <input type="checkbox"><label class="container_check">Professionnels</label>
     <input type="checkbox"><label class="container_check">Particuliers</label>
 
@@ -22,24 +20,35 @@
         <img src="http://localhost/export.php?id={{mydata.id_article}}" width="150px">
       </div>
       <div class="categorie_liste_produit">
-        {{mydata.categorie}}
+        <label>Catégorie</label><br>
+        <div class="image_liste_produit">
+          <img src="{{mydata.categorie}}" width="150px">
+        </div>
+        
       </div>
       <div class="epoque_liste_produit">
-        {{mydata.epoque}}
+        <label>Epoque</label><br>
+        <div class="image_liste_produit">
+          <img src="{{mydata.epoque}}" width="150px">
+        </div>        
       </div>
       <div class="libelle_liste_produit">
+        <label>Nom de l'Article</label><br>
         {{mydata.libelle_article}}
       </div>
       <div class="descriptionart_liste_produit">
+        <label>Description</label><br>
         {{mydata.descriptionart}}
       </div>
       <div class="etat_liste_produit">
+        <label>Etat</label><br>
         {{mydata.etat}}
       </div>
       <div class="prix_liste_produit">
+        <label><h3>Prix</h3></label><br>
         {{mydata.prix}}
       </div>
-      <div class="div_bouton_voir_article">
+      <div>
         <a routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.descriptionart}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}">
           <button (click)="selected()" class="bouton_voir_article">Voir article</button>
         </a>

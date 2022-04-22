@@ -26,8 +26,7 @@ export class AjoutOffreComponent implements OnInit {
   seasons: string[] = ['Armes', 'Vaisselles', 'Meubles', 'Armures', 'Décoration', 'Peinture', 'Sculpture', 'Divers'];
 
 
-  favoriteSeason2 = '';
-  seasons2: string[] = ['Antiquité', 'Moyen-Age', 'Rennaissance', 'Epoque Moderne'];
+  favoriteSeason2: any;
 
   favoriteSeason3 = '';
   seasons3: string[] = ['Bon', 'Moyen', 'Mauvais'];
@@ -84,12 +83,7 @@ export class AjoutOffreComponent implements OnInit {
     this.router.navigate([`${pageName}`])
   }
 
-  //récupere l'epoque du produit
 
-  getValueRadioEpoque(epoquerecup: any) {
-    this.favoriteSeason2 = epoquerecup.value;
-    console.log(epoquerecup['value'])
-  }
 
   getValueRadioCategorie(categorierecup: any) {
     this.favoriteSeason = categorierecup.value;
@@ -101,20 +95,22 @@ export class AjoutOffreComponent implements OnInit {
     console.log(etatrecup['value'])
   }
 
+  //récupére l'article
   get nom_article() {
     return this.angForm.get('nom_article');
   }
+  //récupére l'image
   get add_img() {
     return this.angForm.get('add_img');
   }
-
+  //récupére la description
   get description() {
     return this.angForm.get('description');
-  } //récupére la description
+  } 
+  //récupére le prix
   get prix() {
     return this.angForm.get('prix');
-  } //récupére le prix
-
+  } 
 
 
   //Envoi données formulaire PHP (description, prix, categorie, epoque )
@@ -147,7 +143,15 @@ export class AjoutOffreComponent implements OnInit {
       });
   }
 
+  //Envoie IMG époque au PHP pour l'enregistrer dans le fichier adéquat
+    //récupere l'epoque du produit
 
+    getValueRadioEpoque(epoquerecup: any) {
+      this.favoriteSeason2 = epoquerecup.value;
+      console.log(epoquerecup['value']);
+      
+    }
+    
 }
 
 export interface Categorie {
