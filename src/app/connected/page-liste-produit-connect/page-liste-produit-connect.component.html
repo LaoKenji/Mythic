@@ -58,22 +58,44 @@
     </tr>
   </table>
 </div>
-<div>
-  <!-- <img src="http://localhost/export.php?id=3"> -->
-  <!-- Pour appeller l'image -->
-  <table *ngIf="isSelected">
-    <tr>
-      <td>Id: {{produit.id_img}}</td>
-      <td>Catégorie {{produit.categorie}}</td>
-      <td>Epoque: {{produit.epoque}}</td>
-      <td>Article: {{produit.libelle_article}}</td>
-      <td>Description: {{produit.description}}</td>
-      <td>Etat: {{produit.etat}}</td>
-      <td>Prix: {{produit.prix}}</td>
-      <td><a routerLink="/accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"><button
-            (click)="notSelected()">Retour</button></a></td>
-      <td><button (click)="addToCart(produit)">Ajouter au panier</button></td>
-    </tr>
-  </table>
 
-</div>
+<div class="liste_produit" *ngIf="isSelected">
+  <div class="div_art">
+    <div class="image_liste_produit">
+      <img src="http://localhost/export.php?id={{produit.id_img}}" class="imgart">
+    </div>
+    <div class="categorie_liste_produit">
+      <label>Catégorie</label><br>
+      {{produit.categorie}}
+    </div>
+    <div class="epoque_liste_produit">
+      <label>Epoque</label><br>
+      {{produit.epoque}}
+    </div>
+    <div class="libelle_liste_produit">
+      <label>Nom de l'Article</label><br>
+      {{produit.libelle_article}}
+    </div>
+    <div class="descriptionart_liste_produit">
+      <label>Description</label><br>
+      {{produit.description}}
+    </div>
+    <div class="etat_liste_produit">
+      <label>Etat</label><br>
+      {{produit.etat}}
+    </div>
+    <div class="prix_liste_produit">
+      <label class="label_prix">
+        <h3>Prix :</h3>
+      </label>
+      {{produit.prix}}
+    </div>
+    <div>
+      <a routerLink="/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"><button
+          (click)="notSelected()" class="bouton_voir_article">Retour</button></a>
+    </div>
+    <div>
+      <button (click)="addToCart(produit)">Ajouter au panier</button>
+    </div>
+    <br>
+  </div>
