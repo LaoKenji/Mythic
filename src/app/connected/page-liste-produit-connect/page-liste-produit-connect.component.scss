@@ -1,80 +1,111 @@
 .Filtre{
     padding: 5px;
-    margin: 5px;
+    margin-left: 15%;
+    width: 75%;
+}
+
+.div_art{
+    margin-top: 15px;
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: auto;
+    display: grid;
+    grid-template-columns: 200px 150px 150px 100px 300px 100px 125px 100px;
+    gap: 10px;
+    
 }
-
-
 .liste_produit{
     padding: 0px;
     margin:0 auto;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width: 50%;
-    flex-wrap: wrap;    
-    justify-content: space-between;
-    align-content: space-between;
-    
+    width: fit-content;
+    margin: auto;    
 }
 
-
-
-.img_liste_produit{
-    border: 1px solid black;
-    margin: 2px;
-    padding: 5px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: white;
-    border-radius: 5px;
-    width: 25%;
-    text-align: center;
-    
+.liste_produit table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: auto;   
 }
 
+.image_liste_produit{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    margin-top: 15px;
+    width: auto;
+}
 .categorie_liste_produit{
-    border: 1px solid black;
-    margin: 2px;
-    padding: 5px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: white;
+    margin-top: 5px;
+    text-align: center;
     border-radius: 5px;
-    width: 25%;
-}
-
-.periode_liste_produit{
     border: 1px solid black;
-    margin: 2px;
-    padding: 5px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: #F4F3F3;
-    border-radius: 5px;
-    width: 25%;
+    margin-top: 15px;
+    width: 150px;
+    height: 150px;
 }
-
-.description_liste_produit{
+.epoque_liste_produit{
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 5px;
     border: 1px solid black;
-    margin: 2px;
-    padding: 5px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: #F4F3F3;
-    border-radius: 5px;
-    width: 25%;
+    margin-top: 15px;
+    width: 150px;
+    height: 150px;
 }
-
+.descriptionart_liste_produit{
+    padding: 0;
+    margin: 1px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 15px;
+}
+.libelle_liste_produit{
+    padding: 0;
+    margin: 1px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: auto;
+    height: 75px;
+}
+.etat_liste_produit{
+    padding: 0;
+    margin: 1px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: auto;
+    height: 50px;
+}
 .prix_liste_produit{
-    border: 1px solid black;
-    margin: 2px;
-    padding: 5px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: #F4F3F3;
+    padding: 0;
+    margin: 1px;
     border-radius: 5px;
-    width: 25%;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: auto;
+    height: 50px;
 }
-
+.bouton_voir_article{
+    background: #FFAC4B;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 75px;
+}
 /* unvisited link */
 a:link {
     color: black,
@@ -84,21 +115,28 @@ a:link {
 a:visited {
     color: black,
 }
+.image_epoque_produit{
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.image_categorie_produit{
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 5px;
+}
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td,
-  th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-  
+.label_prix{
+    margin-top: 10px;
+}
+.imgart{
+    width: 150px;
+    border-radius: 5px;
+}

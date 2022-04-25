@@ -33,30 +33,43 @@
 <br>
 
 <div class="liste_produit" *ngIf="!isSelected">
-  <table>
-    <tr>
-      <th>#</th>
-      <th>Categorie</th>
-      <th>Epoque</th>
-      <th>Article</th>
-      <th>Description</th>
-      <th>Etat</th>
-      <th>Prix</th>
-      <th></th>
-    </tr>
-    <tr *ngFor="let mydata of data[0]">
-      <td><img src="http://localhost/export.php?id={{mydata.id_article}}"></td>
-      <td>{{mydata.categorie}}</td>
-      <td>{{mydata.epoque}}</td>
-      <td>{{mydata.libelle_article}}</td>
-      <td>{{mydata.descriptionart}}</td>
-      <td>{{mydata.etat}}</td>
-      <td>{{mydata.prix}}</td>
-      <td><a
-          routerLink="/accueil-connect/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.libelle_article}}/{{mydata.descriptionart}}/{{mydata.etat}}/{{mydata.prix}}"><button
-            (click)="selected()">Voir article</button></a></td>
-    </tr>
-  </table>
+  <div>
+    <div *ngFor="let mydata of data[0]" class="div_art">
+      <div class="image_liste_produit">
+        <img src="http://localhost/export.php?id={{mydata.id_article}}" class="imgart">
+      </div>
+      <div class="categorie_liste_produit">
+        <label>Catégorie</label><br>
+          <img src="{{mydata.categorie}}" width="105px">
+      </div>
+      <div class="epoque_liste_produit">
+        <label>Epoque</label><br>
+        <img src="{{mydata.epoque}}" width="71px">        
+      </div>
+      <div class="libelle_liste_produit">
+        <label>Nom de l'Article</label><br>
+        {{mydata.libelle_article}}
+      </div>
+      <div class="descriptionart_liste_produit">
+        <label>Description</label><br>
+        {{mydata.descriptionart}}
+      </div>
+      <div class="etat_liste_produit">
+        <label>Etat</label><br>
+        {{mydata.etat}}
+      </div>
+      <div class="prix_liste_produit">
+          <label class="label_prix"><h3>Prix :</h3></label>
+          {{mydata.prix}}
+      </div>
+      <div>
+        <a routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.descriptionart}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}">
+          <button (click)="selected()" class="bouton_voir_article">Voir article</button>
+        </a>
+      </div>
+      <br>
+    </div>
+  </div>
 </div>
 
 <div class="liste_produit" *ngIf="isSelected">
@@ -91,7 +104,7 @@
       {{produit.prix}}
     </div>
     <div>
-      <a routerLink="/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"><button
+      <a routerLink="accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"><button
           (click)="notSelected()" class="bouton_voir_article">Retour</button></a>
     </div>
     <div>
