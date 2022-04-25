@@ -30,7 +30,7 @@ export class PageListeProduitComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private api: PanierService) {
-    this.http.get('http://localhost/article.php').subscribe(data => {
+    this.http.get(`http://mythic.erwan-decoster.com/article.php`).subscribe(data => {
       this.data.push(data);
       console.log(this.data);
     }, error => console.error(error));

@@ -6,7 +6,7 @@
 
 <table>
   <tr *ngFor="let mydata of items">
-    <td><img src="http://localhost/export.php?id={{mydata.id_img}}"></td>
+    <td><img src="http://${window.location.host}/export.php?id={{mydata.id_img}}"></td>
     <td>{{mydata.libelle_article}}</td>
     <td>{{mydata.description}}</td>
     <td>{{mydata.etat}}</td>

@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class ApiService {
     redirectUrl!: string;
-    baseUrl: string = "http://localhost/";
+    baseUrl: string = `http://${window.location.host}`;
     @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 
     constructor(private httpClient: HttpClient) { }

@@ -30,7 +30,7 @@ export class InscriptionProComponent implements OnInit {
 
     console.log(registerForm.form);
     console.log('valeurs', JSON.stringify(registerForm.value));
-    this.http.get<any>('http://localhost/create_user.php?email=' + registerForm.value.email + '&siret=' + registerForm.value.siret +
+    this.http.get<any>(`http://${window.location.host}/create_user.php?email=` + registerForm.value.email + '&siret=' + registerForm.value.siret +
       '&mdp=' + registerForm.value.mdp + '&nom_entreprise=' + registerForm.value.nom_entreprise + "&code_ape=" + registerForm.value.code_ape, {})
       .subscribe(data => {
         this.postId = data.id;

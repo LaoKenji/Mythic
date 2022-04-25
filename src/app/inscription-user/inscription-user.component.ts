@@ -27,11 +27,12 @@ export class InscriptionUserComponent implements OnInit {
   public SaveData(registerForm: NgForm) {
     console.log(registerForm.form);
     console.log('valeurs', JSON.stringify(registerForm.value));
-    this.http.get<any>('http://localhost/create_user_part.php?email=' + registerForm.value.email + '&nom=' + registerForm.value.nom +
+    this.http.get<any>(`http://${window.location.host}/create_user_part.php?email=` + registerForm.value.email + '&nom=' + registerForm.value.nom +
       '&prenom=' + registerForm.value.prenom + '&mdp=' + registerForm.value.mdp + '&localite=' + registerForm.value.localite + "&telephone=" + registerForm.value.telephone, {})
       .subscribe(data => {
         this.postId = data.id;
         console.log(this.data);
       }, error => console.error(error));
+      alert("Vous avez réussi à vous créer un compte ! Aller dans connexion pour vous connecter à ce dernier")
   }
 }
