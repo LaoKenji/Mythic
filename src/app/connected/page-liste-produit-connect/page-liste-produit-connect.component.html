@@ -56,11 +56,12 @@
     </div>
     <div class="categorie_liste_produit">
       <label>Catégorie</label><br>
-      {{produit.categorie}}
+      <img src="../../../assets/ressources/{{produit.categorie}}.png" width="90px"> 
+      
     </div>
     <div class="epoque_liste_produit">
       <label>Epoque</label><br>
-      {{produit.epoque}}
+      <img src="../../../assets/ressources/{{produit.epoque}}.png" width="71px"> 
     </div>
     <div class="libelle_liste_produit">
       <label>Nom de l'Article</label><br>
@@ -81,12 +82,9 @@
       {{produit.prix}}
     </div>
     <div>
-      <a routerLink="accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"><button
+      <a routerLink="accueil-connect/pagelisteproduit/{{produit.id_img}}/{{produit.categorie}}/{{produit.epoque}}/{{produit.description}}/{{produit.libelle_article}}/{{produit.etat}}/{{produit.prix}}"><button
           (click)="notSelected()" class="bouton_voir_article">Retour</button></a>
+      <button class="add_panier" (click)="addToCart(produit)">Ajouter au panier</button>
     </div>
-    <div>
-      <button (click)="addToCart(produit)">Ajouter au panier</button>
-    </div>
-    <br>
   </div>
 <br><br><br>

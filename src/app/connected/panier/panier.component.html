@@ -1,20 +1,8 @@
 <meta meta charset=utf-8>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 
 
 <h2>Panier</h2>
-
-<table>
-  <tr *ngFor="let mydata of items">
-    <td><img src="http://${window.location.host}/export.php?id={{mydata.id_img}}"></td>
-    <td>{{mydata.libelle_article}}</td>
-    <td>{{mydata.description}}</td>
-    <td>{{mydata.etat}}</td>
-    <td>{{mydata.prix}}</td>
-    <td><button (click)="valueChange(mydata.prix)" (click)="deleteRow(mydata)">Enlever du panier</button></td>
-  </tr>
-</table>
-
 
 <div class="paiment">
   <div>
@@ -22,5 +10,49 @@
     <button (click)="valueChange(totalPrice)" (click)="clearCart()">Payer</button>
   </div>
 </div>
+
+<br>
+
+<div>
+  <div *ngFor="let mydata of items" class="div_art">
+    <div class="image_liste_produit">
+      <img src="http://mythic.erwan-decoster.com/export.php?id={{mydata.id_img}}" class="imgart">
+    </div>
+    <div class="categorie_liste_produit">
+      <label>Catégorie</label><br>
+        <img src="../../../assets/ressources/{{mydata.categorie}}.png" width="90px">
+    </div>
+    <div class="epoque_liste_produit">
+      <label>Epoque</label><br>
+      <img src="../../../assets/ressources/{{mydata.epoque}}.png" width="71px">        
+    </div>
+    <div class="libelle_liste_produit">
+      <label>Nom de l'Article</label><br>
+      {{mydata.libelle_article}}
+    </div>
+    <div class="descriptionart_liste_produit">
+      <label>Description</label><br>
+      {{mydata.description}}
+    </div>
+    <div class="etat_liste_produit">
+      <label>Etat</label><br>
+      {{mydata.etat}}
+    </div>
+    <div class="prix_liste_produit">
+        <label class="label_prix"><h3>Prix :</h3></label>
+        {{mydata.prix}}
+    </div>
+    <div>
+      <button class="enlever_panier" (click)="valueChange(mydata.prix)" (click)="deleteRow(mydata)" >Enlever du panier</button>
+    </div>
+    <br>
+  </div>
+</div>
+<br>
+
+
+
+
+
 
 <a routerLink="/accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"><button class="Recherche">Retourner sur la page des produits</button></a>
