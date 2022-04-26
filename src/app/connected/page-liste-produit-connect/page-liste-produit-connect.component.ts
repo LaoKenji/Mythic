@@ -87,7 +87,7 @@ export class PageListeProduitConnectComponent implements OnInit {
 
   //Vérifie si l'url contient "" et affiche le contenu selon l'url
   isSelectedPage() {
-    if (this.router.url === '/accueil/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix') {
+    if (this.router.url === '/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix') {
       this.isSelected = false;
     } else {
       this.isSelected = true;
