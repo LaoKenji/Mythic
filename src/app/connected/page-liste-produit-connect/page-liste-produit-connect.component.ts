@@ -30,7 +30,7 @@ export class PageListeProduitConnectComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private api: PanierService) {
-    this.http.get('http://localhost/article.php').subscribe(data => {
+    this.http.get(`http://${window.location.host}/article.php`).subscribe(data => {
       this.data.push(data);
       console.log(this.data);
     }, error => console.error(error));
@@ -106,6 +106,11 @@ export class PageListeProduitConnectComponent implements OnInit {
       prix: this.produit.prix
     };
     this.api.addToCart(product);
+  }
+
+  getlink($adresse: string){
+    let $adresse2 = `mythic.erwan-decoster.com`;
+    return `http://${$adresse2}/${$adresse}`;
   }
 
 }

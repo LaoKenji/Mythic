@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 export class ConnexionProComponent implements OnInit {
   angForm: FormGroup;
   postId: any;
-  baseUrl = 'http://localhost/api/';
+  baseUrl = `http://${window.location.host}/api/`;
 
 
   recup!: string;
@@ -36,7 +36,7 @@ export class ConnexionProComponent implements OnInit {
   getdata(angForm: { value: { email: any; mdp: any; }; }) {
     console.log('valeurs', JSON.stringify(angForm.value));
 
-    this.http.get<any>('http://localhost/connexion_pro.php?email=' + angForm.value.email + '&mdp=' + angForm.value.mdp, {})
+    this.http.get<any>(`http://${window.location.host}/connexion_pro.php?email=` + angForm.value.email + '&mdp=' + angForm.value.mdp, {})
       .subscribe(data => {
         this.recup = data['nb']; // Permet de récupéré le nb de data dans le php 
         console.log(typeof data); // Permet de voir le type de l'élément 

@@ -15,15 +15,13 @@
   <div class="inputs">
     <input type="text" id="name" name="name" required minlength="3" maxlength="20"
       placeholder="Nom de l'entreprise (entre 3 et 20 charactères)" [(ngModel)]='user_pro.nom_entreprise'
-      name='nom_entreprise'>
-    <input type="email" placeholder="Email" [(ngModel)]='user_pro.email' name='email' id='email' />
+      name='nom_entreprise' required>
+    <input type="email" placeholder="Email" [(ngModel)]='user_pro.email' name='email' id='email' required/>
     <input type="password" placeholder="Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25"
-    [(ngModel)]="user_pro.mdp" name="mdp">
-    <input type="password" placeholder="Confirmer Mot de passe (entre 8 et 25 charactères)" required minlength="8"
-    maxlength="25">
+    [(ngModel)]="user_pro.mdp" name="mdp" required>
     
-    <input type="number" placeholder="Numéro de Siret" required max="14" [(ngModel)]="user_pro.siret" name="siret" />
-    <input type="number" placeholder="Code APE" required max="99999" [(ngModel)]="user_pro.code_ape" name="code_ape" />
+    <input type="number" placeholder="Numéro de Siret" required max="14" [(ngModel)]="user_pro.siret" name="siret" required/>
+    <input type="number" placeholder="Code APE" required max="99999" [(ngModel)]="user_pro.code_ape" name="code_ape" required/>
 
   </div>
 
@@ -35,7 +33,7 @@
     <input type="checkbox" class="input_condition_utilisation"><label>J'accepte de recevoir des pubs sur l'ajout de fonctionalité ou d'offre concernant mes recherches</label>
   </div>
   <div class="div_conditions_utilisations">
-    <input type="checkbox" class="input_condition_utilisation"><label>J’accepte les conditions d’utilisations du site</label>
+    <input type="checkbox" class="input_condition_utilisation" required><label>J’accepte les conditions d’utilisations du site</label>
   </div>
 
   <div align="center">

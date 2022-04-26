@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent implements OnInit {
   angForm: FormGroup;
   postId: any;
-  baseUrl = 'http://localhost/api/';
+  baseUrl = `http://${window.location.host}/api/`;
   recup!: string;
   redirection!: number;
 
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   getdata(angForm: { value: { email: any; mdp: any; }; }) {
     console.log('valeurs', JSON.stringify(angForm.value));
 
-    this.http.get<any>('http://localhost/login.php?email=' + angForm.value.email + '&mdp=' + angForm.value.mdp, {})
+    this.http.get<any>(this.getlink(`login.php?email=`+ angForm.value.email + `&mdp=` + angForm.value.mdp),{})
       .subscribe(data => {
         this.recup = data['nb']; // Permet de récupéré le nb de data dans le php 
         console.log(typeof data); // Permet de voir le type de l'élément 
@@ -52,6 +52,11 @@ export class LoginComponent implements OnInit {
 
   goToPage(pageName: string): void {
     this.router.navigate([`${pageName}`])
+  }
+
+  getlink($adresse: string){
+    let $adresse2 = `mythic.erwan-decoster.com`;
+    return `http://${$adresse2}/${$adresse}`;
   }
 
 

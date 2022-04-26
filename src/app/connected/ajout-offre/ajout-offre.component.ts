@@ -19,7 +19,7 @@ export class AjoutOffreComponent implements OnInit {
 
   angForm: FormGroup;
   postId: any;
-  baseUrl = 'http://localhost/api/';
+  baseUrl = `http://${window.location.host}/api/`;
 
   selectedFile: any;
   favoriteSeason = '';
@@ -116,7 +116,7 @@ export class AjoutOffreComponent implements OnInit {
   //Envoi données formulaire PHP (description, prix, categorie, epoque )
   getdata(angForm: { value: { description: any; prix: any; nom_article: any }; }) {
     console.log('valeurs', JSON.stringify(angForm.value), this.favoriteSeason, this.favoriteSeason2, this.favoriteSeason3);
-    this.http.get('http://localhost/ajout_article.php?description=' + angForm.value.description + '&prix=' + angForm.value.prix + '&epoque=' + this.favoriteSeason2 + '&categorie=' + this.favoriteSeason + '&nom_article=' + angForm.value.nom_article + '&etat=' + this.favoriteSeason3, {})
+    this.http.get(`http://${window.location.host}/ajout_article.php?description=` + angForm.value.description + '&prix=' + angForm.value.prix + '&epoque=' + this.favoriteSeason2 + '&categorie=' + this.favoriteSeason + '&nom_article=' + angForm.value.nom_article + '&etat=' + this.favoriteSeason3, {})
       .subscribe((data) => {
         this.postId = data;
         console.log(this.postId);
@@ -134,7 +134,7 @@ export class AjoutOffreComponent implements OnInit {
   onUpload() {
     const fd = new FormData();
     fd.append('image', this.selectedFile, this.selectedFile.name);
-    this.http.post('http://localhost/ajout_img.php', fd, {
+    this.http.post(`http://${window.location.host}/ajout_img.php`, fd, {
       reportProgress: true,
       observe: 'events'
     })

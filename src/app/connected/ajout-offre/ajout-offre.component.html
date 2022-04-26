@@ -9,15 +9,15 @@
   <div class="inputs">
     <!-- <input class="ajout_img" placeholder="Déposer votre Image" type="file"/> -->
     <input type="text" name="nom_article" formControlName="nom_article" autocomplete="off" class="nom_article"
-      placeholder="Nom Article"><br>
+      placeholder="Nom Article" required><br>
     
-    <input class="file-upload" type="file" name="add_img" (change)="onFileSelected($event)" />
+    <input class="file-upload" type="file" name="add_img" (change)="onFileSelected($event)" required/>
     
     <br>
 
     <label>Sélectionner la Catégorie de l'objet</label>
 
-    <mat-radio-group>
+    <mat-radio-group required>
       <mat-radio-button value="../../assets/ressources/Armes.png"  (change)="getValueRadioCategorie($event)"></mat-radio-button>
       <img width="100" src="../../../assets/ressources/Armes.png">
 
@@ -35,7 +35,7 @@
       Sélectionner l'Epoque de l'objet
     </label>
 
-    <mat-radio-group>
+    <mat-radio-group required>
       <mat-radio-button value="../../assets/ressources/Antiquite.png"  (change)="getValueRadioEpoque($event)"></mat-radio-button>
       <img width="100" src="../../../assets/ressources/Antiquite.png">
 
@@ -55,27 +55,15 @@
       Sélectionner l'Etat de l'objet
     </label>
     <mat-radio-button class="example-radio-button" *ngFor="let season of seasons3" [value]="season"
-      (change)="getValueRadioEtat($event)" name="gp3">
+      (change)="getValueRadioEtat($event)" name="gp3" required>
       {{season}}
     </mat-radio-button>
 
     <br>
 
-
-
-
-    <!-- <input type="radio" id="antiquite2" class="input-hidden"> 
-    <label for ="antiquite2">
-      <img src="../../../assets/ressources/Antiquite.png">
-    </label>
-    <input type="radio" id="moyenage2" class="input-hidden"> 
-    <label for ="moyenage2">
-      <img src="../../../assets/ressources/Moyen_Age.png">
-    </label> -->
-
     <input type="text" name="description" formControlName="description" autocomplete="off" class="description"
-      placeholder="Description" maxlength="200">
-    <input type="number" name="prix" formControlName="prix" autocomplete="off" class="prix" placeholder="Prix">
+      placeholder="Description" maxlength="200" required>
+    <input type="number" name="prix" formControlName="prix" autocomplete="off" class="prix" placeholder="Prix" required>
   </div>
 
 

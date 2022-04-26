@@ -20,10 +20,6 @@ export class AppComponent {
 
   constructor(private http: HttpClient, private dataService: ApiService,
     private router:Router) {
-    /* this.http.get('http://localhost/create_user.php').subscribe(data => {
-    this.data.push(data);
-    console.log(this.data); 
-    }, error => console.error(error)); */
 
     dataService.getLoggedInName.subscribe((name): void => {
       return this.changeName(name);
@@ -61,6 +57,8 @@ export class AppComponent {
     this.dataService.deleteToken();
     window.location.href = window.location.href;
   }
+
+
 }
 
 
