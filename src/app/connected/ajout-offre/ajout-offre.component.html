@@ -18,14 +18,24 @@
     <label>Sélectionner la Catégorie de l'objet</label>
 
     <mat-radio-group required>
-      <mat-radio-button value="../../assets/ressources/Armes.png"  (change)="getValueRadioCategorie($event)"></mat-radio-button>
+      <mat-radio-button value="Armes"  (change)="getValueRadioCategorie($event)"></mat-radio-button>
       <img width="100" src="../../../assets/ressources/Armes.png">
 
-      <mat-radio-button value="../../assets/ressources/Vaisselles.png" (change)="getValueRadioCategorie($event)"></mat-radio-button>
+      <mat-radio-button value="Vaisselles" (change)="getValueRadioCategorie($event)"></mat-radio-button>
       <img width="100" src="../../../assets/ressources/Vaisselles.png"> 
 
-      <mat-radio-button value="../../assets/ressources/Meubles.png" (change)="getValueRadioCategorie($event)"></mat-radio-button>
-      <img width="100" src="../../../assets/ressources/Meubles.png">
+      <mat-radio-button value="Meubles" (change)="getValueRadioCategorie($event)"></mat-radio-button>
+      <img width="125" src="../../../assets/ressources/Meubles.png"><br>
+
+      <mat-radio-button value="Armures" (change)="getValueRadioCategorie($event)"></mat-radio-button>
+      <img width="100" src="../../../assets/ressources/Armures.png">
+
+      <mat-radio-button value="Tableaux" (change)="getValueRadioCategorie($event)"></mat-radio-button>
+      <img width="100" src="../../../assets/ressources/Tableaux.png">
+
+      
+      <mat-radio-button value="Sculptures" (change)="getValueRadioCategorie($event)"></mat-radio-button>
+      <img width="100" src="../../../assets/ressources/Sculptures.png">
 
     </mat-radio-group>
 
@@ -36,16 +46,16 @@
     </label>
 
     <mat-radio-group required>
-      <mat-radio-button value="../../assets/ressources/Antiquite.png"  (change)="getValueRadioEpoque($event)"></mat-radio-button>
+      <mat-radio-button value="Antiquite"  (change)="getValueRadioEpoque($event)"></mat-radio-button>
       <img width="100" src="../../../assets/ressources/Antiquite.png">
 
-      <mat-radio-button value="../../assets/ressources/Moyen_Age.png" (change)="getValueRadioEpoque($event)"></mat-radio-button>
+      <mat-radio-button value="Moyen_Age" (change)="getValueRadioEpoque($event)"></mat-radio-button>
       <img width="100" src="../../../assets/ressources/Moyen_Age.png"> 
 
-      <mat-radio-button value="../../assets/ressources/Renaissance.png" (change)="getValueRadioEpoque($event)"></mat-radio-button>
+      <mat-radio-button value="Renaissance" (change)="getValueRadioEpoque($event)"></mat-radio-button>
       <img width="100" src="../../../assets/ressources/Renaissance.png">
 
-      <mat-radio-button value="../../assets/ressources/Contemporain.png" (change)="getValueRadioEpoque($event)"></mat-radio-button>
+      <mat-radio-button value="Contemporain" (change)="getValueRadioEpoque($event)"></mat-radio-button>
       <img width="100" src="../../../assets/ressources/Contemporain.png">
     </mat-radio-group>
   

@@ -39,7 +39,7 @@
           {{mydata.prix}}
       </div>
       <div>
-        <a routerLink="/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.descriptionart}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}">
+        <a routerLink="accueil-connect/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.descriptionart}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}">
           <button (click)="selected()" class="bouton_voir_article">Voir article</button>
         </a>
       </div>
@@ -83,6 +83,9 @@
     <div>
       <a routerLink="accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"><button
           (click)="notSelected()" class="bouton_voir_article">Retour</button></a>
+    </div>
+    <div>
+      <button (click)="addToCart(produit)">Ajouter au panier</button>
     </div>
     <br>
   </div>

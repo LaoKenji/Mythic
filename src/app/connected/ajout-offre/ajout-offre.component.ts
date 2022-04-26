@@ -116,12 +116,12 @@ export class AjoutOffreComponent implements OnInit {
   //Envoi données formulaire PHP (description, prix, categorie, epoque )
   getdata(angForm: { value: { description: any; prix: any; nom_article: any }; }) {
     console.log('valeurs', JSON.stringify(angForm.value), this.favoriteSeason, this.favoriteSeason2, this.favoriteSeason3);
-    this.http.get(`http://${window.location.host}/ajout_article.php?description=` + angForm.value.description + '&prix=' + angForm.value.prix + '&epoque=' + this.favoriteSeason2 + '&categorie=' + this.favoriteSeason + '&nom_article=' + angForm.value.nom_article + '&etat=' + this.favoriteSeason3, {})
+    this.http.post('http://mythic.erwan-decoster.com/ajout_article.php?description=' + angForm.value.description + '&prix=' + angForm.value.prix + '&epoque=' + this.favoriteSeason2 + '&categorie=' + this.favoriteSeason + '&nom_article=' + angForm.value.nom_article + '&etat=' + this.favoriteSeason3, {})
       .subscribe((data) => {
         this.postId = data;
         console.log(this.postId);
       }, (error: any) => console.error(error));
-    alert("Votre Produit à était ajouter !");
+    alert("Votre Produit à été ajouter !");
     this.router.navigate(["/accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"]);
   }
 
@@ -134,7 +134,7 @@ export class AjoutOffreComponent implements OnInit {
   onUpload() {
     const fd = new FormData();
     fd.append('image', this.selectedFile, this.selectedFile.name);
-    this.http.post(`http://${window.location.host}/ajout_img.php`, fd, {
+    this.http.post(`http://mythic.erwan-decoster.com/ajout_img.php`, fd, {
       reportProgress: true,
       observe: 'events'
     })

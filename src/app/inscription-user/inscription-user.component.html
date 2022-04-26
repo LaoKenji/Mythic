@@ -17,18 +17,11 @@
     <input type="text" id="name" required minlength="3" maxlength="20" placeholder="Nom"
       [(ngModel)]='user_part.nom' name='nom' required/>
     <input type="text" placeholder="Prénom" required maxlength="14" [(ngModel)]="user_part.prenom" name="prenom" required/>
-    <input type="text" placeholder="Localite" required maxlength="5" [(ngModel)]="user_part.localite" name="localite" required/>
+    <input type="text" placeholder="Localite" required maxlength="99" [(ngModel)]="user_part.localite" name="localite" required/>
     <input type="number" placeholder="Numéro de Téléphone" required maxlength="5" [(ngModel)]="user_part.telephone"
       name="telephone" required/>
     <input type="password" placeholder="Mot de passe (entre 8 et 25 charactères)" required minlength="8" maxlength="25"
       [(ngModel)]="user_part.mdp" name="mdp" required>
-  </div>
-
-  <div class="div_conditions_utilisations">
-    <input type="checkbox" class="input_condition_utilisation"><label>J'accepte de recevoir des pubs sur l'ajout de fonctionalité ou d'offre concernant mes recherches</label>
-  </div>
-  <div class="div_conditions_utilisations">
-    <input type="checkbox" class="input_condition_utilisation" required><label>J’accepte les conditions d’utilisations du site</label>
   </div>
 
   <br>
