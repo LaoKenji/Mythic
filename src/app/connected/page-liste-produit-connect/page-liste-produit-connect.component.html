@@ -16,11 +16,11 @@
       </div>
       <div class="categorie_liste_produit">
         <label>Catégorie</label><br>
-          <img src="../../../assets/ressources/{{mydata.categorie}}.png" width="90px">
+          <img src="{{mydata.categorie}}" width="105px">
       </div>
       <div class="epoque_liste_produit">
         <label>Epoque</label><br>
-        <img src="../../../assets/ressources/{{mydata.epoque}}.png" width="71px">        
+        <img src="{{mydata.epoque}}" width="71px">        
       </div>
       <div class="libelle_liste_produit">
         <label>Nom de l'Article</label><br>
@@ -39,7 +39,7 @@
           {{mydata.prix}}
       </div>
       <div>
-        <a routerLink="accueil-connect/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.descriptionart}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}">
+        <a routerLink="/accueil-connect/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.descriptionart}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}">
           <button (click)="selected()" class="bouton_voir_article">Voir article</button>
         </a>
       </div>
@@ -47,7 +47,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="liste_produit" *ngIf="isSelected">
   <div class="div_art">
@@ -81,11 +80,11 @@
       {{produit.prix}}
     </div>
     <div>
-      <a routerLink="accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"><button
+      <a routerLink="/accueil-connect/pagelisteproduit/:id/:categorie/:epoque/:libelle_article/:description/:etat/:prix"><button
           (click)="notSelected()" class="bouton_voir_article">Retour</button></a>
     </div>
     <div>
-      <button (click)="addToCart(produit)">Ajouter au panier</button>
+      <button (click)="addToCart(produit)" class="bouton_voir_article">Ajouter au panier</button>
     </div>
     <br>
   </div>
