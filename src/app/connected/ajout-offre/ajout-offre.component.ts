@@ -114,6 +114,7 @@ export class AjoutOffreComponent implements OnInit {
 
 
   //Envoi données formulaire PHP (description, prix, categorie, epoque )
+  
   getdata(angForm: { value: { description: any; prix: any; nom_article: any }; }) {
     console.log('valeurs', JSON.stringify(angForm.value), this.favoriteSeason, this.favoriteSeason2, this.favoriteSeason3);
     this.http.post('http://mythic.erwan-decoster.com/ajout_article.php?description=' + angForm.value.description + '&prix=' + angForm.value.prix + '&epoque=' + this.favoriteSeason2 + '&categorie=' + this.favoriteSeason + '&nom_article=' + angForm.value.nom_article + '&etat=' + this.favoriteSeason3, {})
@@ -127,20 +128,20 @@ export class AjoutOffreComponent implements OnInit {
 
   //Envoie IMG au PHP pour l'enregistrer dans le fichier adéquat
 
-  onFileSelected(event: any) {
+  onFileSelected(event: any){
     this.selectedFile = <File>event.target.files[0];
   }
 
-  onUpload() {
+  onUpload(){
     const fd = new FormData();
     fd.append('image', this.selectedFile, this.selectedFile.name);
-    this.http.post(`http://mythic.erwan-decoster.com/ajout_img.php`, fd, {
+    this.http.post('http://mythic.erwan-decoster.com/ajout_img.php',fd,{
       reportProgress: true,
       observe: 'events'
     })
-      .subscribe(event => {
-        console.log(event);
-      });
+    .subscribe(event=>{
+      console.log(event);
+    });
   }
 
   //Envoie IMG époque au PHP pour l'enregistrer dans le fichier adéquat

@@ -7,17 +7,16 @@
 
 
   <div class="inputs">
-    <!-- <input class="ajout_img" placeholder="Déposer votre Image" type="file"/> -->
     <input type="text" name="nom_article" formControlName="nom_article" autocomplete="off" class="nom_article"
-      placeholder="Nom Article" required><br>
+      placeholder="Nom Article *" required><br>
     
-    <input class="file-upload" type="file" name="add_img" (change)="onFileSelected($event)" required/>
+    <input class="file-upload" type="file" name="add_img" (change)="onFileSelected($event)" placeholder="Inséré une Image *" required/>
     
     <br>
 
-    <label>Sélectionner la Catégorie de l'objet</label>
+    <label>Sélectionner la Catégorie de l'objet *</label>
 
-    <mat-radio-group required>
+    <mat-radio-group name="Categorie">
       <mat-radio-button value="Armes"  (change)="getValueRadioCategorie($event)"></mat-radio-button>
       <img width="100" src="../../../assets/ressources/Armes.png">
 
@@ -42,7 +41,7 @@
     <br>
 
     <label>
-      Sélectionner l'Epoque de l'objet
+      Sélectionner l'Epoque de l'objet *
     </label>
 
     <mat-radio-group required>
@@ -62,7 +61,7 @@
     <br>
 
     <label>
-      Sélectionner l'Etat de l'objet
+      Sélectionner l'Etat de l'objet *
     </label>
     <mat-radio-button class="example-radio-button" *ngFor="let season of seasons3" [value]="season"
       (change)="getValueRadioEtat($event)" name="gp3" required>
@@ -79,7 +78,8 @@
 
 
 
-  <button type="submit" class="button_ajout_offre" (click)="onUpload()">Ajouter Offre</button>
+  <button type="submit" class="button_ajout_offre" (click)="onUpload()">Ajouter Offre</button><br>
+  <h5>* : Champs Obligatoire </h5>
 </form>
 
 
