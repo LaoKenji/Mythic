@@ -1,11 +1,6 @@
 <meta meta charset=utf-8>
 <br>
-<!--Filtre-->
-<div class="Filtre" *ngIf="!isSelected">
-    <label>Annonces:</label>
-    <input type="checkbox"><label class="container_check">Professionnels</label>
-    <input type="checkbox"><label class="container_check">Particuliers</label>
-</div>
+
 <!--Liste de tout les produits (faire une boucle While avec JS pour faire apparaitre toute les annonces)-->
 <!-- Exemple à bouger par la suite-->
 <div class="liste_produit" *ngIf="!isSelected">
@@ -39,7 +34,7 @@
           {{mydata.prix}}
       </div>
       <div>
-        <a routerLink="/accueil-connect/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.descriptionart}}/{{mydata.libelle_article}}/{{mydata.etat}}/{{mydata.prix}}">
+        <a routerLink="/accueil-connect/pagelisteproduit/{{mydata.id_article}}/{{mydata.categorie}}/{{mydata.epoque}}/{{mydata.libelle_article}}/{{mydata.descriptionart}}/{{mydata.etat}}/{{mydata.prix}}">
           <button (click)="selected()" class="bouton_voir_article">Voir article</button>
         </a>
       </div>
